@@ -1,0 +1,17 @@
+aantalkomkommers = input ('hoeveel komkommers: ')
+aantalkomkommers = int (aantalkomkommers)
+
+zeezoutpuntjes = aantalkomkommers*1
+knoflook = aantalkomkommers*2
+dille = 15 * aantalkomkommers
+yoghurt= aantalkomkommers * 500
+wittewijnazijn = aantalkomkommers * 1
+olijfolie = aantalkomkommers * 3
+
+print('aantal eetlepels olijfolie:', olijfolie)
+print ('wittewijnazijn in eetlepels:', wittewijnazijn)
+print('yoghurt in ml:', yoghurt)
+print('dille in gram:', dille)
+print ('aantal knoflooktenen:', knoflook)
+print ('aantal mespunten zeezout:', zeezoutpuntjes)
+
