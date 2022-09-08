@@ -8,4 +8,4 @@ vip_vr = float (vip_vr)
 prijs_vip = 0.074 * vip_vr 
 
 totaalprijs = prijs_tickets + prijs_vip
-print(totaalprijs)
+print('Dit geweldige dagje-uit met', personen ,'mensen in de Speelhal met', vip_vr ,'minuten VR kost je maar', totaalprijs ,'euro')
