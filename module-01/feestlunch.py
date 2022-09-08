@@ -16,8 +16,8 @@ kortingsbonnen = input ('hoeveel euro korting heb je in totaal? ')
 kortingsbonnen = float (kortingsbonnen)
 
 totaalprijs = prijszonderkorting - kortingsbonnen
+totaalprijs = float (totaalprijs)
 
-print(totaalprijs)
-
+print('De feestlunch kost je bij de bakker ', totaalprijs  ,' euro voor de ', croissantaantal ,' croissantjes en de ', stokbroodaantal ,' stokbroden als je ', kortingsbonnen  ,' euro korting hebt!')
 
 
