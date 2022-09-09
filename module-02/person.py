@@ -10,5 +10,3 @@ print ('|  Adres     :' ,adres,)
 print ('|  Postcode  :' ,postcode,)                              
 print ('|  Woonplaats:' ,woonplaats,)                            
 print (' ----------------------------------------------------')
-
-
