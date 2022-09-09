@@ -1,5 +1,3 @@
-from pickletools import int4
-
 
 croissant = 39
 stokbrood = 278
