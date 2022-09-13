@@ -5,12 +5,11 @@ kleur = input ('is de kaas geel? ')
 if kleur == 'ja':
     gaten = input('zitten er gaten in? ')
     if gaten == 'ja':
-        duur = input('is de kaas belagelijk duur?')
+        duur = input('is de kaas belagelijk duur? ')
         if duur == 'ja':
             print('emmenthaler')
         else:
             print('leerdammer')
-
     if gaten == 'nee':
         hard = input('is de kaas hard als een steen?')
         if hard == 'ja':
