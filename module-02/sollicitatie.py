@@ -90,6 +90,6 @@ if certificaat == 'nee':
 fitforjob = (heeft_ervaring_acrobatiek or heeft_ervaring_dieren or heeft_ervaring_jongleren) and (manmetsnor or vrouwmethaar) and heeft_lengte and heeft_gewicht and heeft_certificaat and heeft_mbo and heeft_rijbewijs and heeft_hoed 
 
 if fitforjob:
-    print('je bent uitgenodigd voor een interview ')
+    print('gefeliciteerd',naam,',je bent uitgenodigd voor een interview!')
 else:
-    print ('je bent niet geslaagd')
+    print ('sorry',naam,',je bent niet geslaagd.')
