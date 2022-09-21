@@ -1,5 +1,5 @@
 #esma kilic
-from timeit import repeat
+
 
 
 print('pizzakeuzes: small, medium, large')
@@ -8,25 +8,43 @@ small = int (5)
 medium = int (10)
 large = int (15)
 
-try:
-  aantalsmall = int(input(f"hoeveel small pizza's wil je? "))
-  aantalmedium = int(input(f"hoeveel medium pizza's wil je? "))
-  aantallarge = int(input(f"hoeveel large pizza's wil je? "))
-except: 
-    print('je kan alleen hele getallen invoeren.')
-    aantalsmall = int(input(f"hoeveel small pizza's wil je? "))
-    aantalmedium = int(input(f"hoeveel medium pizza's wil je? "))
-    aantallarge = int(input(f"hoeveel large pizza's wil je? "))
+print('small pizza 5 euro, meidum pizza 10 euro, large pizza 15 euro')
 
 
-small_prijs = small * aantalsmall
-medium_prijs = medium * aantalmedium
-large_prijs = large * aantallarge
+while True:
+  try:
+    smallpizza = int(input('hoeveel small pizzas? '))
+    break
+  except ValueError:
+    print('Alleen hele nummers invoeren, ')
+
+
+while True:
+  try:
+    mediumpizza = int(input('hoeveel medium pizzas? '))
+    break
+  except ValueError:
+    print('Alleen hele nummers invoeren. ')
+
+while True:
+  try:
+    largepizza = int(input('hoeveel large pizzas? '))
+    break
+  except ValueError:
+    print('Alleen hele nummers invoeren. ')
+
+
+
+
+
+small_prijs = small* smallpizza
+medium_prijs = medium * mediumpizza
+large_prijs = large * largepizza
 
 totaalprijs = small_prijs + medium_prijs + large_prijs
 
 print("""aantal pizza's:"""
-,aantalsmall ,"""small pizza's,"""
-,aantalmedium ,"""medium pizza's en"""
-,aantallarge ,"""large pizza's""")
+,smallpizza ,"""small pizza's,"""
+,mediumpizza ,"""medium pizza's en"""
+,largepizza ,"""large pizza's""")
 print("de totaalprijs is",totaalprijs, "euro")
