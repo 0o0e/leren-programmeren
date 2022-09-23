@@ -1,7 +1,6 @@
-from operator import contains
 import sys, time, os, string, random
+from operator import contains
 
-os.system('cls')
 def typewriter(string):
     for char in string:
         sys.stdout.write(char)
@@ -11,13 +10,11 @@ def typewriter(string):
         else:
             time.sleep(1)
 
-
-zin1= "You wake up in a bus. Suddenly an explosion is heard. A bright light flashed from the front of the bus. Than a monster-like creature appeared. \n\
-"
 wakeup = input("Do you want to wake up? (yes/no) ").lower()
 
 if wakeup == 'yes':
-    typewriter(zin1)
+    typewriter("You wake up in a bus. Suddenly an explosion is heard. A bright light flashed from the front of the bus. Than a monster-like creature appeared. \n\
+")
 else:
     typewriter('keep sleeping')
     sys.exit()
@@ -27,7 +24,7 @@ first_choice = input('What do you want to do? [a. Try to kill the monster] [b. R
 dead_1 = "You are too weak. You died. "
 live_1 = "You run to the back of the bus. The monster is still in your sight, but too far to hurt you. "
 
-if first_choice == 'b':
+if first_choice in ('b','B'):
     typewriter(live_1)
 elif first_choice == 'a':
     typewriter(dead_1)
@@ -52,9 +49,9 @@ you are invited to participate in the game. do you accept the invitation? (yes/n
 numb1 = int(random.randint(1,10))
 numb2 = int(random.randint(1,10))
 
-if invitation =='no':
+if invitation in ('no', 'NO', 'n'):
     sys.exit()
-if invitation =='yes':
+if invitation in('yes', 'YES', 'y'):
     typewriter('The game will start in another world. to teleport to this world solve the quiz.\n\
 ')
     quiz = int(input(f'What is the anwser to {numb1} * {numb2}? '))
@@ -66,17 +63,13 @@ if invitation =='yes':
         sys.exit()
 
 typewriter('. . . \n\
+You are now in another world to continue the game. choose a weapon to continue.\n\
 ')
-typewriter('You are now in another world to continue the game. choose a weapon to continue.\n\
-')
-
 weapon = input('choose one from the following: hammer, sword, magic book or spear. ')
 
 typewriter(f'congrats! you are now in possession of a {weapon}\n\
+You can use this weapon to defeat the monster. but first you have to level up your weapon by playing games. \n\
 ')
-typewriter('You can use this weapon to defeat the monster. but first you have to level up your weapon by playing games. \n\
-')
-
 typewriter("""<The first game will start now.>
 The game is simple.
 You have to guess the color based on the information given.\n\
@@ -89,7 +82,7 @@ color_list = ['blue', 'red','green']
 color = random.choice(color_list)
 
 if color == 'red':
-    typewriter('The color of blood. ')
+    typewriter('The color of strawberries. ')
     guessred = input('What color do you think it is? ').lower()
     if guessred == 'red':
         weaponlevel = int('2')
@@ -98,7 +91,7 @@ if color == 'red':
 Your {weapon} is leveling up
 level 1 > 2
 Your weapon is now level 2. To deafeat the monster your weapon has to be level 6.
-You earned 100 coins.
+You earned coins.
 Current amount of coins = 100
 \n\
 """)
@@ -117,13 +110,13 @@ elif color == 'blue':
         typewriter(f"""That is right!
 Your {weapon} is leveling up
 level 1 > 2
-Your weapon is now level 2. To deafeat the monster your weapon has to be level 5.
-You earned 100 coins.
+Your weapon is now level 2. To deafeat the monster your weapon has to be level 6.
+You earned coins.
 Current amount of coins = 100
 \n\
 """)
     else:
-        typewriter("Wrong answer. your weapon won't level up this round. Your weapon is level 1 and you have 0 coins. To deafeat the monster your weapon has to be level 7.\n\
+        typewriter("Wrong answer. your weapon won't level up this round. Your weapon is level 1 and you have 0 coins. To deafeat the monster your weapon has to be level 6.\n\
 ")
         weaponlevel = int('1')
         coins = int(coins)
@@ -137,28 +130,27 @@ elif color == 'green':
         typewriter(f"""That is right!
 Your {weapon} is leveling up
 level 1 > 2
-Your weapon is now level 2. To deafeat the monster your {weapon} has to be level 7.
-You earned 100 coins.
+Your weapon is now level 2. To deafeat the monster your {weapon} has to be level 6.
+You earned coins.
 Current amount of coins = 100
 \n\
 """)
     else:
-        typewriter(f"Wrong answer. your weapon won't level up this round. Your {weapon} is level 1 and you have 0 coins. To deafeat the monster your weapon has to be level 7.\n\
+        typewriter(f"Wrong answer. your weapon won't level up this round. Your {weapon} is level 1 and you have 0 coins. To deafeat the monster your weapon has to be level 6.\n\
 ")
         weaponlevel = int('1')
         coins = int(coins)
        
 
-choices = ['rock','paper','scissors']
 minigame = input('Do you want to play a small game for extra points? This is not necessary. (yes/no) ').lower()
 if minigame == 'no':
     print('ok')
-    weaponlevel = int(weaponlevel + 1)
+    weaponlevel = int(weaponlevel)
     typewriter(f"""
 current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
-if minigame == 'yes':
+if minigame in ('yes', 'Yes', 'y'):
     choices = ['rock','paper','scissors']
     steenpapierschaar = random.choice (choices)
     mychoice = input('rock, paper or scissors? ').lower()
@@ -169,50 +161,51 @@ if minigame == 'yes':
     if steenpapierschaar == mychoice:
         typewriter("It's a tie, you won't earn any points. \n\
 ")
-        weaponlevel2 = weaponlevel
+        
+        weaponlevel
     elif mychoice == 'rock':
         if steenpapierschaar == 'paper':
             typewriter('you lose, no points or coins.\n\
 ')
-            weaponlevel = weaponlevel2
+            weaponlevel
         if steenpapierschaar == 'scissors':
-           weaponlevel2 = int(weaponlevel + 1)
+           weaponlevel = int(weaponlevel + 1)
            typewriter(f"""you win
 Your {weapon} is leveling up.
-level {weaponlevel} > {weaponlevel2}
-current weapon level is {weaponlevel2}
+level {weaponlevel - int(1)} > {weaponlevel}
+current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
     elif mychoice == 'paper':
         if steenpapierschaar == 'rock':
-            weaponlevel2 = int(weaponlevel + 1)
+            weaponlevel = int(weaponlevel + 1)
             typewriter(f"""you win
 Your {weapon} is leveling up.
-level {weaponlevel} > {weaponlevel2}
-current weapon level is {weaponlevel2}
+level {weaponlevel - int(1)} > {weaponlevel}
+current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
         if steenpapierschaar == 'scissors':
             typewriter('you lose, no points or coins.\n\
 ')
-            weaponlevel2 = weaponlevel
+            weaponlevel
     elif mychoice == 'scissors':
         if steenpapierschaar == 'rock':
             typewriter('you lose, no points or coins.\n\
 ')
-            weaponlevel2 = weaponlevel
+            weaponlevel
         if steenpapierschaar == 'paper':
-            weaponlevel2 = int(weaponlevel + 1)
+            weaponlevel = int(weaponlevel + 1)
             typewriter(f"""you win
 Your {weapon} is leveling up.
-level {weaponlevel} > {weaponlevel2}
-current weapon level is {weaponlevel2}
+level {weaponlevel - int(1)} > {weaponlevel}
+current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
 
 
 
-typewriter(f'Your {weapon} level is now {weaponlevel2} and you have {coins} coins. The games will continue tomorrow, get some sleep. \n\
+typewriter(f'The games will continue tomorrow, get some sleep. \n\
 ')
 
 typewriter(f'You go to sleep in a big house. All the players are in this house. there is only one sleeping room. You go to sleep. \n\
@@ -220,7 +213,7 @@ typewriter(f'You go to sleep in a big house. All the players are in this house. 
 The next morning you wake up at 9 a.m. You go to the cafeteria with the other players. there is only one menu: bread. The cost of one bread is only 5 coins. \n\
 current amount of coins = {coins}\n\
 ')
-bread = input('You will need 200 coins later to acsend your {weapon} to level 7. Do you want to buy bread? (yes/no) ')
+bread = input(f'You will need 200 coins later to acsend your {weapon} to level 6. Do you want to buy bread? (yes/no) ')
 if bread == 'yes':
     coins = coins - int(5)
     typewriter(f'One bread is bought. You are not hungry anymore.\n\
@@ -252,19 +245,19 @@ print("""★ * ★ * ★ = 30
 ♦ - ◑ = 2
 """)
 antwoord = input('What is ★ + ♦ + ◑ ? ')
-if antwoord == '16':
+if antwoord in ('16','sixteen'):
     coins = int(coins + 100)
-    weaponlevel3 = (weaponlevel2 + int(1))
+    weaponlevel = (weaponlevel + int(1))
     typewriter(f"""That is right!
 Your weapon is leveling up.
-level {weaponlevel2} > {weaponlevel3}
-current weapon level is {weaponlevel3}
+level {weaponlevel - int(1)} > {weaponlevel}
+current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
 else:
-    weaponlevel3 = weaponlevel2
+    weaponlevel = weaponlevel
     typewriter(f"That is not the answer. Your weapon can't level up.\n\
-current weapon level = {weaponlevel3}\n\
+current weapon level = {weaponlevel}\n\
 current amount of coins is {coins}\n\
 ")
 
@@ -273,37 +266,34 @@ current amount of coins is {coins}\n\
 typewriter("The monster started talking again.\n\
 'There are a few games remaining.'\n\
 'The person who wins all the games will be able to kill me and become king.'\n\
+<The third game will begin now.>\n\
+Guess the number that belongs on the question mark.\n\
 ")
-
-
-typewriter("<The third game will begin now.>\n\
-Guess the number that belongs to the question mark.")
 print("""
    9
   7 2
  5 7 6
 4 6 ? 8
 """)
-antw = input('Which number belongs to the question mark? ')
-if antw == '9':
+antw = input('Which number belongs on the question mark? ')
+if antw in ('9','nine',):
     coins = int(coins + 50)
-    weaponlevel4 = (weaponlevel3 + int(1))
+    weaponlevel = (weaponlevel + int(1))
     typewriter(f"""That is right!
 Your {weapon} is leveling up
-level {weaponlevel3} > {weaponlevel4}
-current weapon level is {weaponlevel4}
+level {weaponlevel - int(1)} > {weaponlevel}
+current weapon level is {weaponlevel}
 current amount of coins is {coins}\n\
 """)
 else:
-    weaponlevel4 = weaponlevel3
+    weaponlevel = weaponlevel
     typewriter(f"""That is not right. You can't level up your {weapon}.
-current weapon level {weaponlevel4}
+current weapon level {weaponlevel}
 current amount of coins is {coins}\n\
 """)
 
-typewriter(f"Your current weapon level is {weaponlevel4} and you have {coins} coins.\n\
-You have to get your weapon level to 6 and have 200 coins to win.\n\
-")
+typewriter('You have to get to weapon level 6 to win. But to go from level 5 to 6 you have to acsend your weapon with 200 coins.\n\
+')
 
 typewriter("<The fourth game will begin now.>\n\
 Choose the arrow that belongs on the question mark. only answer with a, b, c or d\n\
@@ -313,36 +303,127 @@ print("""
 ⬇ ⬋ ⬅
 ⬆ ⬈ ?
 """)
-answer = input('Which arrow belongs on the question mark? [a. ⬇ ] [b. ⬆ ] [c. ⬅ ] [d. ➡ ]')
+answer = input('Which arrow belongs on the question mark? [a. ⬇ ] [b. ⬆ ] [c. ⬅ ] [d. ➡ ] ')
 if answer in ('d', 'D'):
     coins = int(coins + 100)
-    weaponlevel5 = (weaponlevel4 + int(1))
-    typewriter(f"That is correct. \n\
+    weaponlevel = (weaponlevel + int(1))
+    if weaponlevel == int(6):
+        typewriter('You have to acsend your weapon to get to level 6. This will cost 200 coins.\n\
+')
+        acsend = input(f'You currently have {coins} coins. Say yes if you want to acsend your weapon, otherwise say no. ')
+        if acsend == 'yes':
+            typewriter(f'Acsending your {weapon} . . .\n\
+level 5 > 6\n\
+congratulations! You are the first person to reach weapon level 6. ')
+    if weaponlevel == int(5):
+      typewriter(f"That is correct. \n\
 your {weapon} is leveling up\n\
-level {weaponlevel4} > {weaponlevel5}\n\
-current weapon level is {weaponlevel5}\n\
-current amount of coins is {coins}")
+level {weaponlevel - int(1)} > {weaponlevel}\n\
+current weapon level is {weaponlevel}\n\
+current amount of coins is {coins}\n\
+")
 else:
-    weaponlevel5 = weaponlevel4
+    weaponlevel = weaponlevel
     typewriter(f"""That is not right. You can't level up your {weapon}.
-current weapon level {weaponlevel5}
+current weapon level {weaponlevel}
 current amount of coins is {coins}\n\
 """)
 
-typewriter("""<The fourth game will begin now.>\n\
-You have to answer what number should come on the dots in this series.""")
 
-series = input('Look at this series: 7, 10, 8, 11, 9, 12, ... What number should come on the dots? ')
-if series == '10':
-    weaponlevel6 = weaponlevel5
-    typewriter("""That is correct!""")
-    typewriter(f"""you win
+
+if weaponlevel <= 5:
+    typewriter("""<The fifth game will begin now.>\n\
+You have to answer what number should come on the dots in this series.\n\
+""")
+    series = input('Look at this series: 7, 10, 8, 11, 9, 12, ... What number should come on the dots? ')
+    if series == '10':
+        weaponlevel = int(weaponlevel + 1)
+        typewriter("""That is correct! """)
+        typewriter(f"""
 Your {weapon} is leveling up.
-level {weaponlevel5} > {weaponlevel6}
-current weapon level is {weaponlevel6}
+level {weaponlevel - int(1)} > {weaponlevel}
+current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
-    weaponlevel2 = int(weaponlevel + 1)
-    coins = int(coins + 50)
-if minigame =='no':
-    weaponlevel2 = weaponlevel
+        coins = int(coins + 50)
+    if minigame =='no':
+        weaponlevel = weaponlevel
+
+
+if weaponlevel < 6:
+    typewriter('You have lost the game. You die')
+    sys.exit()
+if weaponlevel >= 6:
+    typewriter(f"""Your {weapon} is now level {weaponlevel}! you can kill the monster now.
+You start walking towards the monster.
+You are close enough to the monster to kill him.\n\
+""")
+    coins = coins + int(1000)
+    kill = input(f'Press enter to kill the monster with your {weapon}.')
+    typewriter(f"""You attack the monster with your {weapon}. after a few attacks the monster dies.
+. . .
+Congratulations! You are the winner of the game.
+You have become king.
+You can choose a gift and leave.\n\
+""")
+    gift=input('Choose one: frog, dolphin, elephant.')
+    if gift in ('frog', 'Frog'):
+        print("""           
+           .--._.--.
+          ( O     O )
+          /   . .   \.
+         .`._______.'.
+        /(           )\.
+      _/  \  \   /  /  \_
+   .~   `  \  \ /  /  '   ~.
+  {    -.   \  V  /   .-    }
+_ _`.    \  |  |  |  /    .'_ _
+>_       _} |  |  | {_       _<
+ /. - ~ ,_-'  .^.  `-_, ~ - .\.
+         '-'|/   \|`-` \n\
+""")
+        typewriter(f'Goodbye, {name}')
+    if gift in('dolphin', 'Dolphin'):
+        print("""                                      
+                                       .--.
+                _______             .-"  .'
+        .---u"""       """"---._  ."    %
+      .'                        "--.    %
+ __.--'  o                          "".. "
+(____.                                  ":
+ `----.__                                 ".
+         `----------__                     ".
+               ".   . ""--.                 ".
+                 ". ".     ""-.              ".
+                   "-.)        ""-.           ".
+                                   "".         ".
+                                      "".       ".
+                                         "".      ".
+                                            "".    ".
+                      ^~^~^~^~^~^~^~^~^~^~^~^~^"".  "^~^~^~^~^
+                                            ^~^~^~^  ~^~
+                                                 ^~^~^~ \n\
+""")
+        typewriter(f'Goodbye, {name}')
+    if gift in("elephant"):
+        print("""
+                            _
+                          .' `'.__
+                         /      \ `'"-,
+        .-''''--...__..-/ .     |      \.
+      .'               ; :'     '.  a   |
+     /                 | :.       \     =\.
+    ;                   \':.      /  ,-.__;.-;`
+   /|     .              '--._   /-.7`._..-;`
+  ; |       '                |`-'      \  =|
+  |/\        .   -' /     /  ;         |  =/
+  (( ;.       ,_  .:|     | /     /\   | =|
+   ) / `\     | `""`;     / |    | /   / =/
+     | ::|    |      \    \ \    \ `--' =/
+    /  '/\    /       )    |/     `-...-`
+   /    | |  `\    /-'    /;
+   \  ,,/ |    \   D    .'  \.
+jgs `""`   \  nnh  D_.-'L__nnh
+            `""'\n\
+""")
+        typewriter(f'Goodbye, {name}')

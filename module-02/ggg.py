@@ -1,4 +1,5 @@
-
+import os, sys, time, string
+import string, time, sys
 
 age = int(input ('how old are u? '))
 heeft_age = age >=18
@@ -21,4 +22,20 @@ if fitforit:
   tel = input('phone-number: ')
   print('We will soon contact you soon ')
 
-  
+
+
+
+
+os.system('cls')
+
+
+
+
+def typewriter(string):
+  for char in string:
+    sys.stdout.write(char)
+    if char == '.':
+      time.sleep('1')
+
+
+typewriter('jfhutjhkojbh')

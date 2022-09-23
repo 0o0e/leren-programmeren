@@ -15,7 +15,7 @@ while True:
   try:
     smallpizza = int(input('hoeveel small pizzas? '))
     break
-  except ValueError:
+  except ValueError: 
     print('Alleen hele nummers invoeren, ')
 
 
