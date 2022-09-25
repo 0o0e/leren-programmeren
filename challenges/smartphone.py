@@ -8,8 +8,9 @@ elif samsung_prijs >= iphone_prijs:
     print(f'De iphone is het goedkoopst, de telefoon kost: {iphone_prijs} euro')
     
 diff = iphone_prijs - samsung_prijs
+diff2 = samsung_prijs - iphone_prijs 
 
 if diff <= 50:
-    print('Het advies is dus om de iphone te kopen.')
+    print(f'Het advies is dus om de iphone te kopen. Deze is namelijk {diff} duurder dan de samsung, maar wel beter.')
 else:
-    print('Het advies is dus om de samsung te kopen.')
+    print(f'Het advies is dus om de samsung te kopen. Deze is namelijk {diff} goedkoper dan de iphone.')
