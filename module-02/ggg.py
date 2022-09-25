@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+
+gewicht = int(input('vraag '))
+
+heeft_gewicht = gewicht >= 90
+
+print(heeft_gewicht)
+=======
 import os, sys, time, string
 import string, time, sys
 
@@ -39,3 +47,4 @@ def typewriter(string):
 
 
 typewriter('jfhutjhkojbh')
+>>>>>>> 821addbc34e11e4e808bbb43954174b01c3be9a3

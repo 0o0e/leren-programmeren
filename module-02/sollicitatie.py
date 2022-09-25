@@ -5,7 +5,16 @@ from logging import exception
 
 
 naam = input('Wat is uw naam? ')
+<<<<<<< HEAD
+ervaring_jongleren = int(input('Hoeveel jaar ervaring heeft u met jongleren? ')) #5
+ervaring_dieren = int(input('Hoeveel jaar praktijkervaring heeft u met dieren-dressuur? ')) #4
+ervaring_acrobatiek = int(input('Hoeveel jaar prakttijkervaring heeft u met acrobatiek? ')) #3
+mbo = input('Bent u in bezit van een MBO 4 diploma ondernemen? (ja/nee) ')
+rijbewijs = input('Bent u in bezit van een vrachtwagen rijbewijs? (ja/nee) ')
+hoed = input('Bent u in bezit van een hoge hoed? (ja/nee) ')
+=======
 
+>>>>>>> 821addbc34e11e4e808bbb43954174b01c3be9a3
 geslacht = input('Bent u een man of een vrouw? (m/v) ')
 if  geslacht == 'm':
     snor =input('Heeft u een snor breder dan 10 cm? (ja/nee) ')
@@ -31,6 +40,8 @@ kleur = input('wat is je lievelingskleur? ')
 if kleur == 'blauw':
     raise NameError('mensen met de lievelingskleur blauw zijn hier niet welkom')
 
+<<<<<<< HEAD
+=======
 
 naam = input('Begint je naam meet de letter a, e, i, of u? ')
 if naam == 'ja':
@@ -54,6 +65,7 @@ if idk =='nee':
 certificaat = input("Heeft u het Certificaat 'personeel overleven met gevaarlijk'? (ja/nee) ")
 heeft_certificaat = certificaat == 'ja'
 
+>>>>>>> 821addbc34e11e4e808bbb43954174b01c3be9a3
 if geslacht == 'm':
  if  snor == 'ja':
     heeft_snor = True
@@ -70,6 +82,23 @@ if geslacht == 'v':
 
 vrouwmethaar = heeft_haar = True
 
+<<<<<<< HEAD
+if  lengte >= 150:
+    heeft_lengte = True
+if lengte <= 150:
+    heeft_lengte = False
+
+if  gewicht >= 90:
+    heeft_gewicht = True
+if gewicht < 90:
+    heeft_gewicht = False
+
+if  certificaat == 'ja':
+    heeft_certificaat = True
+if certificaat == 'nee':
+    heeft_certificaat = False
+=======
+>>>>>>> 821addbc34e11e4e808bbb43954174b01c3be9a3
 
 fitforjob = (heeft_ervaring_acrobatiek or heeft_ervaring_dieren or heeft_ervaring_jongleren) and (manmetsnor or vrouwmethaar) and heeft_lengte and heeft_gewicht and heeft_certificaat and heeft_mbo and heeft_rijbewijs and heeft_hoed 
 
