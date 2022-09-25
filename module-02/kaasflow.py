@@ -16,8 +16,7 @@ if kleur == 'ja':
             print('parmigiano reggiano')
         else:
             print('goudse kaas')
-
-if kleur == 'nee':
+elif kleur == 'nee':
     schimmel = input('heeft de kaas een blauwe schimmel? ')
     if schimmel == 'ja':
         korst = input('heeft de kaas een korst? ')
