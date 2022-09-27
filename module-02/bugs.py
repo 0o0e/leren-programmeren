@@ -31,8 +31,12 @@ num2 = random.randint(5,15)
 
 try:
    number = int(input(f"En weet jij wat {num1} - {num2} is?"))
+   if int(number == num1-num2):
+      print ('Dat is juist.')
+   if number != int:
+      print('Dat is geen nummer.')
 except:
-    print('Nee dat klopt niet {}'.format(name))
+    print(f'Nee dat klopt niet {name}')
 if int(number == num1-num2):
    print('Dat is juist')
 else:
