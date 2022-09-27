@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-
 gewicht = int(input('vraag '))
 
 heeft_gewicht = gewicht >= 90
 
 print(heeft_gewicht)
-=======
 import os, sys, time, string
 import string, time, sys
 
@@ -31,13 +28,7 @@ if fitforit:
   print('We will soon contact you soon ')
 
 
-
-
-
 os.system('cls')
-
-
-
 
 def typewriter(string):
   for char in string:
@@ -47,4 +38,3 @@ def typewriter(string):
 
 
 typewriter('jfhutjhkojbh')
->>>>>>> 821addbc34e11e4e808bbb43954174b01c3be9a3

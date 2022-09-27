@@ -12,23 +12,23 @@ if asus_prijs >= iphone_prijs and samsung_prijs:
     duurste = asus_prijs
     duurste_name = 'asus'
     
-if (iphone_prijs <= samsung_prijs and iphone_prijs >= asus_prijs) or (iphone_prijs >= samsung_prijs and iphone_prijs <= asus_prijs):
+if (iphone_prijs) <= (samsung_prijs) and (iphone_prijs) >= (asus_prijs) or (iphone_prijs) >= (samsung_prijs) and (iphone_prijs) <= (asus_prijs):
     middel = iphone_prijs
     middel_name = 'iphone'
-if (samsung_prijs <= asus_prijs and samsung_prijs >=iphone_prijs) or (samsung_prijs >= asus_prijs and samsung_prijs <=iphone_prijs):
+if (samsung_prijs) <= (asus_prijs) and (samsung_prijs >=iphone_prijs) or (samsung_prijs) >= (asus_prijs) and (samsung_prijs) <= (iphone_prijs):
     middel = samsung_prijs
     middel_name = 'samsung'
-if (asus_prijs <= samsung_prijs and asus_prijs >=iphone_prijs) or (asus_prijs >= samsung_prijs and asus_prijs <=iphone_prijs):
+if (asus_prijs) <= (samsung_prijs) and (asus_prijs) >= (iphone_prijs) or (asus_prijs) >= (samsung_prijs) and (asus_prijs) <= (iphone_prijs):
     middel = asus_prijs
     middel_name = 'asus'
 
-if (iphone_prijs) <= (asus_prijs and samsung_prijs):
+if (iphone_prijs) < (asus_prijs) and (samsung_prijs):
     goedkoopste = iphone_prijs
     goedkoopste_name = 'iphone'
-if (samsung_prijs) < (iphone_prijs and asus_prijs):
+if (samsung_prijs) < (iphone_prijs) and (asus_prijs):
     goedkoopste = samsung_prijs
     goedkoopste_name = 'samsung'
-if (asus_prijs) < (iphone_prijs and samsung_prijs):
+if (asus_prijs) < (iphone_prijs) and (samsung_prijs):
     goedkoopste = asus_prijs
     goedkoopste_name = 'asus'
 
