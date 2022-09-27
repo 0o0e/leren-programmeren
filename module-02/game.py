@@ -2,7 +2,7 @@ import sys, time, os, string, random
 
 def typewriter(string):
     for char in string:
-        sys.stdout.write(char)
+        sys.stdout.flush()
         sys.stdout.flush()
         if char !="\n":
             time.sleep(0.03)
@@ -442,4 +442,4 @@ _ _`.    \  |  |  |  /    .'_ _
             |  |____/
            /__/
          """)
-        typewriter(f"You didn't choose a gift, so we chose one for you. Goodbye {name}.")
+        typewriter(f"You didn't choose a gift, so we chose one for you. Goodbye, {name}.")

@@ -8,7 +8,7 @@ small = int (5)
 medium = int (10)
 large = int (15)
 
-print('small pizza 5 euro, meidum pizza 10 euro, large pizza 15 euro')
+print('small pizza 5 euro, medium pizza 10 euro, large pizza 15 euro')
 
 
 while True:
@@ -16,8 +16,7 @@ while True:
     smallpizza = int(input('hoeveel small pizzas? '))
     break
   except ValueError: 
-    print('Alleen hele nummers invoeren, ')
-
+    print('Alleen hele nummers invoeren. ')
 
 while True:
   try:
@@ -37,7 +36,7 @@ while True:
 
 
 
-small_prijs = small* smallpizza
+small_prijs = small * smallpizza
 medium_prijs = medium * mediumpizza
 large_prijs = large * largepizza
 
