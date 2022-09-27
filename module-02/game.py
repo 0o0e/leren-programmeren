@@ -1,5 +1,4 @@
 import sys, time, os, string, random
-from operator import contains
 
 def typewriter(string):
     for char in string:
@@ -208,7 +207,7 @@ Your current amount of coins is {coins}\n\
 typewriter(f'The games will continue tomorrow, get some sleep. \n\
 ')
 
-typewriter(f'You go to sleep in a big house. All the players are in this house. there is only one sleeping room. You go to sleep. \n\
+typewriter(f'You go to a house. All the players are in this house. There is only one sleeping room. You go to sleep. \n\
  \n\
 The next morning you wake up at 9 a.m. You go to the cafeteria with the other players. there is only one menu: bread. The cost of one bread is only 5 coins. \n\
 current amount of coins = {coins}\n\
@@ -354,19 +353,19 @@ if weaponlevel < 6:
     typewriter('You have lost the game. You die')
     sys.exit()
 if weaponlevel >= 6:
-    typewriter(f"""Your {weapon} is now level {weaponlevel}! you can kill the monster now.
+    typewriter(f"""Your {weapon} is level {weaponlevel}! you can kill the monster now.
 You start walking towards the monster.
 You are close enough to the monster to kill him.\n\
 """)
     coins = coins + int(1000)
     kill = input(f'Press enter to kill the monster with your {weapon}.')
-    typewriter(f"""You attack the monster with your {weapon}. after a few attacks the monster dies.
+    typewriter(f"""You attack the monster with your {weapon}. After a few attacks the monster dies.
 . . .
 Congratulations! You are the winner of the game.
 You have become king.
 You can choose a gift and leave.\n\
 """)
-    gift=input('Choose one: frog, dolphin, elephant.')
+    gift=input('Choose one: frog, dolphin, elephant. ')
     if gift in ('frog', 'Frog'):
         print("""           
            .--._.--.
@@ -405,13 +404,13 @@ _ _`.    \  |  |  |  /    .'_ _
                                                  ^~^~^~ \n\
 """)
         typewriter(f'Goodbye, {name}')
-    if gift in("elephant"):
+    if gift in("elephant, Elephant"):
         print("""
                             _
                           .' `'.__
                          /      \ `'"-,
         .-''''--...__..-/ .     |      \.
-      .'               ; :'     '.  a   |
+      .'               ; :'     '.  G   |
      /                 | :.       \     =\.
     ;                   \':.      /  ,-.__;.-;`
    /|     .              '--._   /-.7`._..-;`
@@ -423,7 +422,24 @@ _ _`.    \  |  |  |  /    .'_ _
     /  '/\    /       )    |/     `-...-`
    /    | |  `\    /-'    /;
    \  ,,/ |    \   D    .'  \.
-jgs `""`   \  nnh  D_.-'L__nnh
+    `""`   \  nnh  D_.-'L__nnh
             `""'\n\
 """)
         typewriter(f'Goodbye, {name}')
+    else:
+        print("""
+       o                o
+                  o
+         o   ______      o
+           _/  (   \_
+ _       _/  (       \_  O
+| \_   _/  (   (    0  \.
+|== \_/  (   (           |
+|=== _ (   (   (         |
+|==_/ \_ (   (           |
+|_/     \_ (   (     \__/
+          \_ (       _/
+            |  |____/
+           /__/
+         """)
+        typewriter(f"You didn't choose a gift, so we chose one for you. Goodbye {name}.")

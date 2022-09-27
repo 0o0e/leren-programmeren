@@ -11,7 +11,7 @@ if samsung_prijs >= iphone_prijs and asus_prijs:
 if asus_prijs >= iphone_prijs and samsung_prijs:
     duurste = asus_prijs
     duurste_name = 'asus'
-
+    
 if (iphone_prijs <= samsung_prijs and iphone_prijs >= asus_prijs) or (iphone_prijs >= samsung_prijs and iphone_prijs <= asus_prijs):
     middel = iphone_prijs
     middel_name = 'iphone'
@@ -49,7 +49,6 @@ asusgoedkoop1 = samsung_prijs - asus_prijs
 
 samsunggoedkoop = iphone_prijs - samsung_prijs
 samsungduur = samsung_prijs - asus_prijs
-
 
 if (asusgoedkoop or asusgoedkoop1) < int(100) and (diff <= 50):
     print(f'Het advies is om de iphone te kopen. Deze is namelijk maar {diff} euro duurder dan de samsung en {diff3} euro duurder dan de asus.')
