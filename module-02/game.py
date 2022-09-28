@@ -6,13 +6,13 @@ if wakeup == 'yes':
     print("You wake up in a bus. Suddenly an explosion is heard. A bright light flashed from the front of the bus. Than a monster-like creature appeared. \n\
 ")
 else:
-    print('keep sleeping')
+    print('goodbye')
     sys.exit()
 
 
 first_choice = input('What do you want to do? [a. Try to kill the monster] [b. Run] ').lower()
-dead_1 = "You are too weak. You died. "
-live_1 = "You run to the back of the bus. The monster is still in your sight, but too far to hurt you. "
+dead_1 = "You are too weak, you died. "
+live_1 = "You run to the back of the bus. The monster is still in your sight, but too far to kill you. "
 
 if first_choice in ('b','B'):
     print(live_1)
@@ -25,6 +25,7 @@ else:
 
 zin2 = "The monster starts talking\n\
 'The game will start soon.'\n\
+. . .\n\
 The monster continued talking.\n\
 'Some of you are invited for the game.'\n\
 . . .\n\
@@ -203,7 +204,7 @@ print(f'You go to a house. All the players are in this house. There is only one 
 The next morning you wake up at 9 a.m. You go to the cafeteria with the other players. there is only one menu: bread. The cost of one bread is only 5 coins. \n\
 current amount of coins = {coins}\n\
 ')
-bread = input(f'You will need 200 coins later to acsend your {weapon} to level 6. Do you want to buy bread? (yes/no) ')
+bread = input(f'You will need 200 coins later to acsend your {weapon} to level 6. Do you want to buy bread? (yes/no) ').lower()
 if bread == 'yes':
     coins = coins - int(5)
     print(f'One bread is bought. You are not hungry anymore.\n\
@@ -213,7 +214,7 @@ if bread == 'no':
     print("You don't eat anything. You are hungry and can't think straight anymore. \n\
 ")
 
-    sure = input("Are you sure? Do you want to buy bread? (yes/no) ")
+    sure = input("Are you sure? Do you want to buy bread? (yes/no) ").lower()
     if sure == 'no':
         print("You can't hold on anymore and you die.")
         sys.exit
@@ -250,8 +251,6 @@ else:
 current weapon level = {weaponlevel}\n\
 current amount of coins is {coins}\n\
 ")
-
-
 
 print("The monster started talking again.\n\
 'There are a few games remaining.'\n\

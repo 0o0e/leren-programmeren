@@ -34,8 +34,6 @@ while True:
 
 
 
-
-
 small_prijs = small * smallpizza
 medium_prijs = medium * mediumpizza
 large_prijs = large * largepizza

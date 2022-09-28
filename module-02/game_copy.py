@@ -2,12 +2,15 @@ import sys, time, os, string, random
 
 def typewriter(string):
     for char in string:
-        sys.stdout.flush()
+        sys.stdout.write(char)
         sys.stdout.flush()
         if char !="\n":
             time.sleep(0.03)
         else:
             time.sleep(1)
+
+
+            
 
 wakeup = input("Do you want to wake up? (yes/no) ").lower()
 
@@ -15,13 +18,13 @@ if wakeup == 'yes':
     typewriter("You wake up in a bus. Suddenly an explosion is heard. A bright light flashed from the front of the bus. Than a monster-like creature appeared. \n\
 ")
 else:
-    typewriter('keep sleeping')
+    typewriter('Goodbye')
     sys.exit()
 
 
 first_choice = input('What do you want to do? [a. Try to kill the monster] [b. Run] ').lower()
 dead_1 = "You are too weak. You died. "
-live_1 = "You run to the back of the bus. The monster is still in your sight, but too far to hurt you. "
+live_1 = "You run to the back of the bus. The monster is still in your sight, but too far to kill you. "
 
 if first_choice in ('b','B'):
     typewriter(live_1)
@@ -34,6 +37,7 @@ else:
 
 zin2 = "The monster starts talking\n\
 'The game will start soon.'\n\
+. . .\n\
 The monster continued talking.\n\
 'Some of you are invited for the game.'\n\
 . . .\n\
@@ -426,7 +430,7 @@ _ _`.    \  |  |  |  /    .'_ _
             `""'\n\
 """)
         typewriter(f'Goodbye, {name}')
-    else:
+    if gift in ():
         print("""
        o                o
                   o
