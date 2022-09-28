@@ -42,8 +42,5 @@ large_prijs = large * largepizza
 
 totaalprijs = small_prijs + medium_prijs + large_prijs
 
-print("""aantal pizza's:"""
-,smallpizza ,"""small pizza's,"""
-,mediumpizza ,"""medium pizza's en"""
-,largepizza ,"""large pizza's""")
+print(f"aantal pizza's: {smallpizza} small pizza's, {mediumpizza} medium pizza's en {largepizza} large pizza's")
 print("de totaalprijs is",totaalprijs, "euro")
