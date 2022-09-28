@@ -355,8 +355,9 @@ Congratulations! You are the winner of the game.
 You have become king.
 You can choose a gift and leave.\n\
 """)
-    gift=input('Choose one: frog, dolphin, elephant. ')
-    if gift in ('frog', 'Frog'):
+
+gift=input('Choose one: frog, dolphin, elephant. ')
+if gift in ('frog', 'Frog'):
         print("""           
            .--._.--.
           ( O     O )
@@ -372,7 +373,8 @@ _ _`.    \  |  |  |  /    .'_ _
          '-'|/   \|`-` \n\
 """)
         print(f'Goodbye, {name}')
-    if gift in('dolphin', 'Dolphin'):
+        sys.exit()
+if gift in('dolphin', 'Dolphin'):
         print("""                                      
                                        .--.
                 _______             .-"  .'
@@ -394,7 +396,8 @@ _ _`.    \  |  |  |  /    .'_ _
                                                  ^~^~^~ \n\
 """)
         print(f'Goodbye, {name}')
-    if gift in("elephant, Elephant"):
+        sys.exit()
+if gift in("elephant, Elephant"):
         print("""
                             _
                           .' `'.__
@@ -414,9 +417,10 @@ _ _`.    \  |  |  |  /    .'_ _
    \  ,,/ |    \   D    .'  \.
     `""`   \  nnh  D_.-'L__nnh
             `""'\n\
-""")
+""")    
         print(f'Goodbye, {name}')
-    else:
+        sys.exit()
+elif gift != ('frog', 'elephant', 'dolphin'):
         print("""
        o                o
                   o
@@ -431,5 +435,6 @@ _ _`.    \  |  |  |  /    .'_ _
           \_ (       _/
             |  |____/
            /__/
-         """)
+         \n\
+""")
         print(f"You didn't choose a gift, so we chose one for you. Goodbye, {name}.")

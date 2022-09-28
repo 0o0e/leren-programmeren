@@ -206,8 +206,6 @@ current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
 
-
-
 typewriter(f'The games will continue tomorrow, get some sleep. \n\
 ')
 
@@ -263,8 +261,6 @@ else:
 current weapon level = {weaponlevel}\n\
 current amount of coins is {coins}\n\
 ")
-
-
 
 typewriter("The monster started talking again.\n\
 'There are a few games remaining.'\n\
@@ -332,8 +328,6 @@ current weapon level {weaponlevel}
 current amount of coins is {coins}\n\
 """)
 
-
-
 if weaponlevel <= 5:
     typewriter("""<The fifth game will begin now.>\n\
 You have to answer what number should come on the dots in this series.\n\
@@ -386,6 +380,7 @@ _ _`.    \  |  |  |  /    .'_ _
          '-'|/   \|`-` \n\
 """)
         typewriter(f'Goodbye, {name}')
+        sys.exit()
     if gift in('dolphin', 'Dolphin'):
         print("""                                      
                                        .--.
@@ -408,6 +403,7 @@ _ _`.    \  |  |  |  /    .'_ _
                                                  ^~^~^~ \n\
 """)
         typewriter(f'Goodbye, {name}')
+        sys.exit()
     if gift in("elephant, Elephant"):
         print("""
                             _
@@ -430,7 +426,8 @@ _ _`.    \  |  |  |  /    .'_ _
             `""'\n\
 """)
         typewriter(f'Goodbye, {name}')
-    if gift in ():
+        sys.exit()
+    elif gift != ('frog', 'elephant', 'dolphin'):
         print("""
        o                o
                   o
@@ -447,3 +444,4 @@ _ _`.    \  |  |  |  /    .'_ _
            /__/
          """)
         typewriter(f"You didn't choose a gift, so we chose one for you. Goodbye, {name}.")
+        sys.exit()
