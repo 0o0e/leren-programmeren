@@ -336,16 +336,22 @@ You have to answer what number should come on the dots in this series.\n\
     if series == '10':
         weaponlevel = int(weaponlevel + 1)
         typewriter("""That is correct! """)
-        typewriter(f"""
+    if weaponlevel == int(6):
+        acsend2 = input(f'You currently have {coins} coins. Say yes if you want to acsend your weapon, otherwise say no. ')
+        if acsend2 == 'yes':
+            coins = int(coins - 200)
+            typewriter(f"""
 Your {weapon} is leveling up.
-level {weaponlevel - int(1)} > {weaponlevel}
+level 5 > 6
 current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
         coins = int(coins + 50)
+        if acsend2 == 'no':
+            typewriter("You couldn't get to weapon level 6. You died. ")
+            sys.exit()
     if minigame =='no':
         weaponlevel = weaponlevel
-
 
 if weaponlevel < 6:
     typewriter('You have lost the game. You die')
