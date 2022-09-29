@@ -326,7 +326,7 @@ You have to answer what number should come on the dots in this series.\n\
 """)
     series = input('Look at this series: 7, 10, 8, 11, 9, 12, ... What number should come on the dots? ')
     if series == '10':
-        weaponlevel = int(weaponlevel + 1)
+        weaponlevel = (weaponlevel + 1)
         print("""That is correct! """)
         print(f"""
 Your {weapon} is leveling up.

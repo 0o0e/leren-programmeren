@@ -56,11 +56,11 @@ if invitation in('yes', 'YES', 'y'):
 ')
 
 
-quiz = (input(f'What is the anwser to {numb1} * {numb2}? '))
-if numb1 * numb2 == quiz:
+quiz = int(input(f'What is the anwser to {numb1} * {numb2}? '))
+if int(numb1 * numb2 == quiz):
         typewriter('That is correct. You will teleport to another world in a few seconds.\n\
 ')
-if (numb1 * numb2 != quiz):
+if int(numb1 * numb2 != quiz):
         typewriter('That is wrong.')
         sys.exit()
 
