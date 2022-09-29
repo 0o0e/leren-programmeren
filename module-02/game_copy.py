@@ -1,3 +1,4 @@
+from msilib import type_binary
 import sys, time, os, string, random
 
 def typewriter(string):
@@ -56,13 +57,17 @@ if invitation in('yes', 'YES', 'y'):
 ')
 
 
-quiz = int(input(f'What is the anwser to {numb1} * {numb2}? '))
-if int(numb1 * numb2 == quiz):
-        typewriter('That is correct. You will teleport to another world in a few seconds.\n\
+while True:
+  try: 
+    quiz = int(input(f'What is the anwser to {numb1} * {numb2}? '))
+    if int(numb1 * numb2 != quiz):
+     print('That is wrong, try again.')
+    if int(numb1 * numb2 == quiz):
+     typewriter('That is correct. You will teleport to another world in a few seconds.\n\
 ')
-if int(numb1 * numb2 != quiz):
-        typewriter('That is wrong.')
-        sys.exit()
+     break
+  except ValueError: 
+    print('That is not a number.')
 
 
 typewriter('. . . \n\
@@ -144,12 +149,13 @@ Current amount of coins = 100
        
 minigame = input('Do you want to play a small game for extra points? This is not necessary. (yes/no) ').lower()
 if minigame == 'no':
-    print('ok')
+    typewriter('ok')
+    weaponlevel = (weaponlevel)
     typewriter(f"""
 current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
-if minigame in ('yes', 'y'):
+if minigame in ('yes', 'Yes', 'y'):
     choices = ['rock','paper','scissors']
     steenpapierschaar = random.choice (choices)
     mychoice = input('rock, paper or scissors? ').lower()
@@ -157,41 +163,44 @@ if minigame in ('yes', 'y'):
 ')
     typewriter(f'your choice = {mychoice} \n\
 ')
-if steenpapierschaar == mychoice:
-    typewriter("It's a tie, you won't earn any points. \n\
+    if steenpapierschaar == mychoice:
+        typewriter("It's a tie, you won't earn any points. \n\
 ")
-    
-elif mychoice == 'rock':
-    if steenpapierschaar == 'paper':
-        typewriter('you lose, no points or coins.\n\
+
+    elif mychoice == 'rock':
+        if steenpapierschaar == 'paper':
+            typewriter('you lose, no points or coins.\n\
 ')
-    if steenpapierschaar == 'scissors':
-        weaponlevel = (weaponlevel + 1)
-        typewriter(f"""you win
+            weaponlevel
+        if steenpapierschaar == 'scissors':
+           weaponlevel = (weaponlevel + 1)
+           typewriter(f"""you win
 Your {weapon} is leveling up.
 level {weaponlevel - 1} > {weaponlevel}
 current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
-elif mychoice == 'paper':
-    if steenpapierschaar == 'rock':
-        weaponlevel = (weaponlevel + 1)
-        typewriter(f"""you win
+    elif mychoice == 'paper':
+        if steenpapierschaar == 'rock':
+            weaponlevel = (weaponlevel + 1)
+            typewriter(f"""you win
 Your {weapon} is leveling up.
 level {weaponlevel - 1} > {weaponlevel}
 current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
-if steenpapierschaar == 'scissors':
-    typewriter('you lose, no points or coins.\n\
+        if steenpapierschaar == 'scissors':
+            typewriter('you lose, no points or coins.\n\
 ')
-elif mychoice == 'scissors':
-    if steenpapierschaar == 'rock':
-        typewriter('you lose, no points or coins.\n\
+            weaponlevel
+    elif mychoice == 'scissors':
+        if steenpapierschaar == 'rock':
+            typewriter('you lose, no points or coins.\n\
 ')
-if steenpapierschaar == 'paper':
-    weaponlevel = (weaponlevel + 1)
-    typewriter(f"""you win
+            weaponlevel
+        if steenpapierschaar == 'paper':
+            weaponlevel = (weaponlevel + 1)
+            typewriter(f"""you win
 Your {weapon} is leveling up.
 level {weaponlevel - 1} > {weaponlevel}
 current weapon level is {weaponlevel}

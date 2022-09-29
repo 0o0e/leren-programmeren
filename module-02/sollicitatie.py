@@ -1,11 +1,4 @@
-
 naam = input('Wat is uw naam? ')
-ervaring_jongleren = int(input('Hoeveel jaar ervaring heeft u met jongleren? ')) #5
-ervaring_dieren = int(input('Hoeveel jaar praktijkervaring heeft u met dieren-dressuur? ')) #4
-ervaring_acrobatiek = int(input('Hoeveel jaar prakttijkervaring heeft u met acrobatiek? ')) #3
-mbo = input('Bent u in bezit van een MBO 4 diploma ondernemen? (ja/nee) ')
-rijbewijs = input('Bent u in bezit van een vrachtwagen rijbewijs? (ja/nee) ')
-hoed = input('Bent u in bezit van een hoge hoed? (ja/nee) ')
 
 geslacht = input('Bent u een man of een vrouw? (m/v) ')
 if  geslacht == 'm':
@@ -31,7 +24,6 @@ heeft_rijbewijs = rijbewijs == 'ja'
 hoed = input('Bent u in bezit van een hoge hoed? (ja/nee) ')
 heeft_hoed = hoed == 'ja'
 
-
 if geslacht == 'm':
     if  snor == 'ja':
      manmetsnor = True
@@ -48,8 +40,6 @@ if geslacht == 'v':
         heeft_haar = False
     if geslacht == 'm':
      heeft_haar = False
-
-
 
 lengte = int(input('Wat is uw lichaamslengte in cm? ')) #150
 heeft_lengte = lengte >= 150

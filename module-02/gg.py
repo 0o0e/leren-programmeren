@@ -38,3 +38,12 @@ def typewriter(string):
 
 
 typewriter('jfhutjhkojbh')
+
+
+
+ervaring_jongleren = int(input('Hoeveel jaar ervaring heeft u met jongleren? ')) #5
+ervaring_dieren = int(input('Hoeveel jaar praktijkervaring heeft u met dieren-dressuur? ')) #4
+ervaring_acrobatiek = int(input('Hoeveel jaar prakttijkervaring heeft u met acrobatiek? ')) #3
+mbo = input('Bent u in bezit van een MBO 4 diploma ondernemen? (ja/nee) ')
+rijbewijs = input('Bent u in bezit van een vrachtwagen rijbewijs? (ja/nee) ')
+hoed = input('Bent u in bezit van een hoge hoed? (ja/nee) ')
