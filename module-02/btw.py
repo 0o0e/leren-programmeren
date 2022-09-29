@@ -5,5 +5,5 @@ def berekenbtw(bedrag_excl: float) -> float:
 bedrag = float(input('wat is het bedrag zonder btw? '))
 incl_btw = (berekenbtw(bedrag))
 
-print(f'het bedrag zonder btw is {incl_btw}')
+print(f'het bedrag met btw is {incl_btw}')
 
