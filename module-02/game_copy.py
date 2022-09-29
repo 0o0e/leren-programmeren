@@ -11,7 +11,7 @@ def typewriter(string):
 
 wakeup = input("Do you want to wake up? (yes/no) ").lower()
 
-if wakeup == 'yes':
+if wakeup in ('yes','y'):
     typewriter("You wake up in a bus. Suddenly an explosion is heard. A bright light flashed from the front of the bus. Than a monster-like creature appeared. \n\
 ")
 else:
@@ -145,7 +145,6 @@ Current amount of coins = 100
 minigame = input('Do you want to play a small game for extra points? This is not necessary. (yes/no) ').lower()
 if minigame == 'no':
     print('ok')
-    weaponlevel = weaponlevel
     typewriter(f"""
 current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
@@ -170,7 +169,7 @@ elif mychoice == 'rock':
         weaponlevel = (weaponlevel + 1)
         typewriter(f"""you win
 Your {weapon} is leveling up.
-level {weaponlevel - int(1)} > {weaponlevel}
+level {weaponlevel - 1} > {weaponlevel}
 current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
@@ -207,7 +206,7 @@ typewriter(f'You go to a house. All the players are in this house. There is only
 The next morning you wake up at 9 a.m. You go to the cafeteria with the other players. there is only one menu: bread. The cost of one bread is only 5 coins. \n\
 current amount of coins = {coins}\n\
 ')
-bread = input(f'You will need 200 coins later to acsend your {weapon} to level 6. Do you want to buy bread? (yes/no) ')
+bread = input(f'You will need 200 coins later to acsend your {weapon} to level 6. Do you want to buy bread? (yes/no) ').lower()
 if bread == 'yes':
     coins = (coins - 5)
     typewriter(f'One bread is bought. You are not hungry anymore.\n\
