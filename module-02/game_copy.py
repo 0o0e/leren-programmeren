@@ -9,9 +9,6 @@ def typewriter(string):
         else:
             time.sleep(1)
 
-
-            
-
 wakeup = input("Do you want to wake up? (yes/no) ").lower()
 
 if wakeup == 'yes':
@@ -35,7 +32,7 @@ else:
     sys.exit()
     
 
-zin2 = "The monster starts talking\n\
+zin2 = "The monster starts talking:\n\
 'The game will start soon.'\n\
 . . .\n\
 The monster continued talking.\n\
@@ -59,12 +56,12 @@ if invitation in('yes', 'YES', 'y'):
 ')
 
 
-quiz = int(input(f'What is the anwser to {numb1} * {numb2}? '))
+quiz = (input(f'What is the anwser to {numb1} * {numb2}? '))
 if numb1 * numb2 == quiz:
-        print('That is correct. You will teleport to another world in a few seconds.\n\
+        typewriter('That is correct. You will teleport to another world in a few seconds.\n\
 ')
-if int(numb1 * numb2 != quiz):
-        print('That is wrong.')
+if (numb1 * numb2 != quiz):
+        typewriter('That is wrong.')
         sys.exit()
 
 
@@ -90,9 +87,9 @@ color = random.choice(color_list)
 if color == 'red':
     typewriter('The color of strawberries. ')
     guessred = input('What color do you think it is? ').lower()
-    if guessred == 'red':
-        weaponlevel = int('2')
-        coins = int(coins + 100)
+    if guessred in ('red','rood'):
+        weaponlevel = 2
+        coins = (coins + 100)
         typewriter(f"""That is right!
 Your {weapon} is leveling up
 level 1 > 2
@@ -109,7 +106,7 @@ Current amount of coins = 100
 elif color == 'blue':
     typewriter('The color is seen a lot outside when you look up. its also seen when you look in water. ')
     guessblue = input('what color do you think it is? ').lower()
-    if guessblue == 'blue':
+    if guessblue in ('blue','blauw'):
         weaponlevel = 2
         coins = coins + 100
         typewriter(f"""That is right!
@@ -128,7 +125,7 @@ Current amount of coins = 100
 elif color == 'green':
     typewriter('The color of spinach and broccoli. ')
     guessgreen = input('What color do you think it is? ').lower()
-    if guessgreen == 'green':
+    if guessgreen in ('green','groen'):
         weaponlevel = 2
         coins = coins + 100
         typewriter(f"""That is right!
@@ -145,7 +142,6 @@ Current amount of coins = 100
         weaponlevel = 1
         coins = coins
        
-
 minigame = input('Do you want to play a small game for extra points? This is not necessary. (yes/no) ').lower()
 if minigame == 'no':
     print('ok')
@@ -154,7 +150,7 @@ if minigame == 'no':
 current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
-if minigame in ('yes', 'Yes', 'y'):
+if minigame in ('yes', 'y'):
     choices = ['rock','paper','scissors']
     steenpapierschaar = random.choice (choices)
     mychoice = input('rock, paper or scissors? ').lower()
@@ -162,45 +158,41 @@ if minigame in ('yes', 'Yes', 'y'):
 ')
     typewriter(f'your choice = {mychoice} \n\
 ')
-    if steenpapierschaar == mychoice:
-        typewriter("It's a tie, you won't earn any points. \n\
+if steenpapierschaar == mychoice:
+    typewriter("It's a tie, you won't earn any points. \n\
 ")
-        
-        weaponlevel
-    elif mychoice == 'rock':
-        if steenpapierschaar == 'paper':
-            typewriter('you lose, no points or coins.\n\
+    
+elif mychoice == 'rock':
+    if steenpapierschaar == 'paper':
+        typewriter('you lose, no points or coins.\n\
 ')
-            weaponlevel
-        if steenpapierschaar == 'scissors':
-           weaponlevel = (weaponlevel + 1)
-           typewriter(f"""you win
+    if steenpapierschaar == 'scissors':
+        weaponlevel = (weaponlevel + 1)
+        typewriter(f"""you win
 Your {weapon} is leveling up.
 level {weaponlevel - int(1)} > {weaponlevel}
 current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
-    elif mychoice == 'paper':
-        if steenpapierschaar == 'rock':
-            weaponlevel = (weaponlevel + 1)
-            typewriter(f"""you win
+elif mychoice == 'paper':
+    if steenpapierschaar == 'rock':
+        weaponlevel = (weaponlevel + 1)
+        typewriter(f"""you win
 Your {weapon} is leveling up.
 level {weaponlevel - 1} > {weaponlevel}
 current weapon level is {weaponlevel}
 Your current amount of coins is {coins}\n\
 """)
-        if steenpapierschaar == 'scissors':
-            typewriter('you lose, no points or coins.\n\
+if steenpapierschaar == 'scissors':
+    typewriter('you lose, no points or coins.\n\
 ')
-            weaponlevel
-    elif mychoice == 'scissors':
-        if steenpapierschaar == 'rock':
-            typewriter('you lose, no points or coins.\n\
+elif mychoice == 'scissors':
+    if steenpapierschaar == 'rock':
+        typewriter('you lose, no points or coins.\n\
 ')
-            weaponlevel
-        if steenpapierschaar == 'paper':
-            weaponlevel = (weaponlevel + 1)
-            typewriter(f"""you win
+if steenpapierschaar == 'paper':
+    weaponlevel = (weaponlevel + 1)
+    typewriter(f"""you win
 Your {weapon} is leveling up.
 level {weaponlevel - 1} > {weaponlevel}
 current weapon level is {weaponlevel}
@@ -225,13 +217,13 @@ if bread == 'no':
     typewriter("You don't eat anything. You are hungry and can't think straight anymore. \n\
 ")
 
-    sure = input("Are you sure? Do you want to buy bread? (yes/no) ")
-    if sure == 'no':
-        typewriter("You can't hold on anymore and you die.")
-        sys.exit
-    if sure == 'yes':
-        coins = coins - int(5)
-        typewriter(f"You buy bread and you're not hungry anymore. \n\
+sure = input("Are you sure? Do you want to buy bread? (yes/no) ")
+if sure == 'no':
+    typewriter("You can't hold on anymore and you die.")
+    sys.exit
+if sure == 'yes':
+    coins = (coins - 5)
+    typewriter(f"You buy bread and you're not hungry anymore. \n\
 current amount of coins = {coins} \n\
 ")
 
@@ -315,7 +307,7 @@ if answer in ('d', 'D'):
             typewriter(f'Acsending your {weapon} . . .\n\
 level 5 > 6\n\
 congratulations! You are the first person to reach weapon level 6. ')
-    if weaponlevel == 5:
+    if weaponlevel <= 5:
       typewriter(f"That is correct. \n\
 your {weapon} is leveling up\n\
 level {weaponlevel - 1} > {weaponlevel}\n\
