@@ -1,9 +1,37 @@
 from RobotArm import RobotArm
 
-robotArm = RobotArm('exercise 1')
+robotArm = RobotArm('exercise 2')
 
 # Jouw python instructies zet je vanaf hier:
-
+robotArm.grab()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.drop()
+robotArm.moveLeft()
+robotArm.moveLeft()
+robotArm.grab()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.drop()
+robotArm.moveLeft()
+robotArm.moveLeft()
+robotArm.moveLeft()
+robotArm.moveLeft()
+robotArm.moveLeft()
+robotArm.grab()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.moveRight()
+robotArm.drop()
 
 
 

@@ -1,4 +1,3 @@
-from msilib import type_binary
 import sys, time, os, string, random
 
 def typewriter(string):
