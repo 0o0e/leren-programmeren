@@ -1,2 +1,3 @@
-for i in range(20,50,2):
+end = 100
+for i in range(1,end):
     print(i)
