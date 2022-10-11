@@ -4,6 +4,8 @@ robotArm.speed = 3
 for i in range(9):
     robotArm.grab()
     robotArm.scan()
+    if robotArm.scan() == '':
+        break
     if robotArm.scan() == 'white':
         robotArm.moveRight()
         robotArm.drop()
