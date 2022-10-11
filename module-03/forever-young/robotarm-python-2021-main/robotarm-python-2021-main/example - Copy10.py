@@ -1,14 +1,16 @@
+from multiprocessing.connection import wait
 from RobotArm import RobotArm
 robotArm = RobotArm('exercise 10')
-op = 9
-po = 8
+right = 9
+left = 8
 for aaa in range(5):
     robotArm.grab()
-    for x in range(op):
+    for x in range(right):
         robotArm.moveRight()
     robotArm.drop()
-    for i in range(po):
+    for i in range(left):
         robotArm.moveLeft()
-    op = op - 2
-    po = po - 2
+    right = right - 2
+    left = left - 2
 robotArm.wait()
+ 
