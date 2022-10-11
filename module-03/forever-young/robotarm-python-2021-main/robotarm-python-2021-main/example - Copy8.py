@@ -1,8 +1,5 @@
 from RobotArm import RobotArm
-
 robotArm = RobotArm('exercise 8')
-robotArm.speed = 4
-
 # Jouw python instructies zet je vanaf hier:
 robotArm.moveRight()
 aaa = 0
@@ -13,7 +10,6 @@ while aaa < 7:
     for x in range (8):
         robotArm.moveLeft()
     aaa = aaa + 1
-
 
 # Na jouw code wachten tot het sluiten van de window:
 robotArm.wait()
