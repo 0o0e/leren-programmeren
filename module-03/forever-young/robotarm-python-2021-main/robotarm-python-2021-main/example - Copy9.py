@@ -1,7 +1,5 @@
 from RobotArm import RobotArm
-
 robotArm = RobotArm('exercise 9')
-
 for a in range(4):
     for i in range(4):
         robotArm.grab()
