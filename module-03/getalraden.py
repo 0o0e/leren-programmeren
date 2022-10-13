@@ -2,7 +2,6 @@ import random
 
 # while getal != raad:
 
-
 raad = 0
 
 punten = 0
@@ -10,9 +9,11 @@ score = 0
 ronde = 0
 vraag = 'ja'
 
+
 getal = random.randint(1,1000)
 print(getal)
 while vraag == 'ja':
+    # for punten == punten + 10
     raad = int(input('Raad het getal: '))
     diff = abs(getal - raad)
     if punten == 10:
@@ -21,9 +22,9 @@ while vraag == 'ja':
         print('hoger')
     if raad > getal:
         print('lager')
-    if diff <= 50 and diff >= 20:
+    if diff <= 50 and diff >= 20 and getal != raad:
         print('je bent warm')
-    if diff <= 20:
+    if diff <= 20 and getal != raad:
         print('je bent heel warm')
     punten = punten + 1
     if getal == raad:
@@ -35,5 +36,3 @@ while vraag == 'ja':
         ronde = ronde + 1
         print(f'Dit was ronde {ronde}. Je score is {score}.')
         vraag = input('Wil je nog een ronde spelen? ')
-        
-
