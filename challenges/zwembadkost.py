@@ -44,11 +44,9 @@ if m3 < 20 and kleur != 'rood':
     prijs2 = 125 * m2
     totaalprijs = prijs + prijs2
 
-# lengte * breedte= 24
 
 totaal = float (uitgravengrond + afvoerengrond + voorrijkosten + totaalprijs)
 
-# voorrijkosten kloppen alleen als de klant 60 km verweg woont en als de grootte meer dan 20 m3 is dus ik heb er een input van gemaakt
 
 print(f"""
 offerte voor een zwembad van 8 bij 3 bij 1.5 meter (inhoud : {m3} m3)

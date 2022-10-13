@@ -1,7 +1,8 @@
 from RobotArm import RobotArm
 robotArm = RobotArm('exercise 11')
+teller = 9
 robotArm.speed = 3
-for i in range(9):
+for move  in range (teller):
     robotArm.grab()
     robotArm.scan()
     if robotArm.scan() == '':
@@ -10,6 +11,7 @@ for i in range(9):
         robotArm.moveRight()
         robotArm.drop()
         robotArm.moveRight()
+        teller = teller 
     else:
         robotArm.drop()
         robotArm.moveRight()
