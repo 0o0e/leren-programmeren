@@ -25,7 +25,11 @@ if afstand > 50 and m3 > 20:
     voorrijkosten = 250.0 + extra
 
 kleur = input('Welke kleur tegels wil je? ')
-m2 = float(hoogte * breedte)
+m1 = float(hoogte * breedte)
+m = float(hoogte * diepte) * 2
+ma = float(breedte * diepte) * 2
+m2 = m1 + m + ma
+
 if m3 < 20 and kleur == 'rood':
     prijs = 250 * m2
     prijs2 = 25 * m2
