@@ -9,11 +9,11 @@ score = 0
 ronde = 0
 vraag = 'ja'
 
-
-getal = random.randint(1,1000)
-print(getal)
+# getal = random.randint(1,1000)
+# print(getal)
 while vraag == 'ja':
-    # for punten == punten + 10
+    getal = random.randint(1,1000)
+    print(getal)
     raad = int(input('Raad het getal: '))
     diff = abs(getal - raad)
     if punten == 10:
