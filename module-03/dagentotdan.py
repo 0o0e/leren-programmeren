@@ -5,3 +5,5 @@ aaa = dagen[dagen.index(dag)+1:]
 while len(aaa) > 0:
     print(aaa[0])
     aaa = aaa [1:]
+
+dagIndex = 0
