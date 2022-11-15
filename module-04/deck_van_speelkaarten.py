@@ -17,3 +17,4 @@ for i in range(7):
     teller += 1
 print(f'deck {len(deck)} kaarten: , {deck}')
 
+
