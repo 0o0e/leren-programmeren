@@ -42,8 +42,6 @@ if change > 0: # if there is change there is a coinvalue otherwise there is no c
     else:
       coinValue = 0
 
-
-
 if change > 0: #if change is not returned, it prints that it is not returned. if all the change is given back it prints 'done'
   print('Change not returned: ', str(change) + ' cents')
 else:

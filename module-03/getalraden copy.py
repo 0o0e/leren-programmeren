@@ -1,4 +1,5 @@
 import random, sys
+MAXRONDES = 2
 punten = 0
 score = 0
 ronde = 0
@@ -7,10 +8,12 @@ if vraag != 'ja':
     print('oke')
     sys.exit
 
-while ronde < 20 and vraag == 'ja':
+while ronde < MAXRONDES and vraag == 'ja':
     getal = random.randint(1,1000)
+    print(getal)
     punten = 0
-    while vraag == 'ja':
+    geraden = False
+    while punten < 10 and geraden == False : #zolang niet geraden en het aantal pogingen kleiner dan 10
         raad = int(input('Raad het getal: '))
         punten += 1
         diff = abs(getal - raad)
@@ -23,28 +26,18 @@ while ronde < 20 and vraag == 'ja':
         if diff <= 20 and getal != raad:
             print('je bent heel warm')
         if getal == raad:
-            break
-        if punten == 10:
-            break
-    if getal == raad: 
+            geraden = True
+    ronde += 1
+    punten == 0
+    if geraden:
         score += 1
-        ronde += 1
-        print(f'Je hebt het getal geraden! Dit was ronde {ronde}. Je score is {score}.')
+        print(f'Je hebt het getal geraden! Je score is {score}.')
+    else:
+        print(f'Je hebt het nummer niet geraden. Het nummer was {getal}. ')
+    if ronde == MAXRONDES:
+        print(f'Dit was de laatste ronde.')
+    else:
+        print(f'Dit was ronde {ronde}.')
         vraag = input('Wil je nog een ronde spelen? ')
-        punten == 0
-        if vraag != 'ja':
-            print(f'je score is {score}. het spel eindigt nu.')
-            break 
-    if punten == 10:
-        ronde += 1
-        if ronde != 20:
-            print(f'Je hebt het nummer niet geraden. Het nummer was {getal}. ')
-            print(f'Dit was ronde {ronde}. Je score is {score}.')
-            vraag = input('Wil je nog een ronde spelen? ')
-            punten = 0
-        if vraag != 'ja':
-            print(f'je score is {score}. het spel eindigt nu.')
-            break
-        if ronde == 20:
-            print(f'Dit was de laatste ronde. je score is {score}')
-            break
+
+print(f'je eindscore is {score}. het spel eindigt nu.')           
