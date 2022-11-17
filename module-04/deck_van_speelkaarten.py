@@ -1,4 +1,6 @@
 import random
+
+
 colors = ['harten','klaveren','schoppen','ruiten']
 values = [2,3,4,5,6,7,8,9,10,'boer','vrouw','heer','aas']
 jokers = ['joker']
@@ -8,6 +10,7 @@ for color in colors:
         deck.append((color,value,))
 for i in range(2):
     deck.append((jokers))
+
 teller = 1
 random.shuffle(deck)
 for i in range(7):

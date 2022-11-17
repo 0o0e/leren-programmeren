@@ -1,12 +1,9 @@
-
 croissant = 39
 stokbrood = 278
 
-croissantaantal = input ('hoeveel croissanten? ')
-stokbroodaantal = input ('hoeveel stokbroden? ')
+croissantaantal = int(input ('hoeveel croissanten? '))
+stokbroodaantal = int(input ('hoeveel stokbroden? '))
 
-croissantaantal = int (croissantaantal)
-stokbroodaantal = int (stokbroodaantal)
 
 prijscr = croissant * croissantaantal
 prijsst = stokbrood * stokbroodaantal
