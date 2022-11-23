@@ -8,12 +8,12 @@ deck = []
 for color in colors:
     for value in values:
         deck.append((color,value,))
-for i in range(2):
+for jokers_toevoegen in range(2):
     deck.append((jokers))
 
 teller = 1
 random.shuffle(deck)
-for i in range(7):
+for gekozen_kaarten in range(7):
     choice =random.choice(deck)
     print(f'kaart {teller} {choice}')
     deck.remove(choice)

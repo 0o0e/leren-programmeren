@@ -1,3 +1,24 @@
+# lijst = {}
+# boodschappenlijst = []
+# values = []
+# meer_toevoegen = 'ja'
+# while meer_toevoegen == 'ja':
+#     item_toevoegen = input('Voeg een item toe: ').lower()
+#     if item_toevoegen not in lijst:
+#         hoeveelkeer= int(input('Hoeveel keer wil je deze item: '))
+#         values.append(hoeveelkeer)
+#     if item_toevoegen in lijst:
+#         hoeveelkeer +=1
+#         lijst[lijstje] = hoeveelkeer
+#     boodschappenlijst.append(item_toevoegen)
+#     for lijstje in boodschappenlijst:
+#         for hoeveelkeer in values:
+#             lijst[lijstje] = hoeveelkeer
+#         boodschappenlijst.remove(item_toevoegen)
+#     print(lijst)
+#     meer_toevoegen = input('Wil je meer dingen toevoegen? ')
+
+
 lijst = {}
 boodschappenlijst = []
 values = []

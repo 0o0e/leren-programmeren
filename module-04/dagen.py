@@ -8,10 +8,3 @@ dagenomgekeerd = tuple(dagenomgekeerd)
 print('alle dagen van de week omgekeerd is',dagenomgekeerd)
 print('de werkdagen in omgekeerde volgorde is',dagenomgekeerd[-5:])
 print('de weekenddagen in omgekeerde volgorde is',dagenomgekeerd[:2])
-
-# for d in range(0,4):
-#     print(dagen[d])
-
-# aa = reversed(dagen)
-# aa = tuple(aa)
-# print(aa)
