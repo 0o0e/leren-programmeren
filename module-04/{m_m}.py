@@ -6,7 +6,7 @@ hoeveel_toevoegen = int(input('Hoeveel mnms wil je toevoegen? '))
 values = []
 zak = {}
 
-for i in range(4):
+for i in range(len(kleuren) - 1):
     nummer = random.randint(0,hoeveel_toevoegen) # value nummer word random int
     values.append(nummer) # de nummer word toegevoegt aan values list
     hoeveel_toevoegen -= nummer # hoeveel_toevoegen word verminderd met 1, dus de volgende nummer word gekozen tussen 0 en de nieuwe hoeveel_toevoegen

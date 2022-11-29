@@ -11,13 +11,19 @@ for color in colors:
 for jokers_toevoegen in range(2):
     deck.append((jokers))
 
-teller = 1
+# teller = 1
 random.shuffle(deck)
-for gekozen_kaarten in range(7):
-    choice =random.choice(deck)
-    print(f'kaart {teller} {choice}')
-    deck.remove(choice)
-    teller += 1
-print(f'deck {len(deck)} kaarten: , {deck}')
+print(deck)
 
-
+# for gekozen_kaarten in range(7):
+#     choice =random.choice(deck)
+#     print(f'kaart {teller} {choice}')
+#     deck.remove(choice)
+#     teller += 1
+# print(f'deck {len(deck)} kaarten: , {deck}')
+kaartnumr = 1
+for i in range(7):
+    print(f'kaart {kaartnumr} {deck[0]}')
+    deck.pop(0)
+    kaartnumr+=1
+print(deck)
