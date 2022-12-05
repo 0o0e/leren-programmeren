@@ -4,15 +4,15 @@ colors = ['yellow','green','orange','red','brown']
 while True:
     welkekleur = input(f'Kies een van de volgende kleuren: {(colors)} : ')
     if welkekleur in colors:
-        aa = True
+        waar = True
     try:
-        aa == True
+        waar == True
         break
     except:
         print('kies een kleur uit de lijst')
 welrond = 0
 nietrond = 0
-for i in range(0,len(fruitmand)):
+for i in range(len(fruitmand)):
     if fruitmand[i]['color'] == welkekleur:
         if fruitmand[i]['round']== True:
             welrond += 1
