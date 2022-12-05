@@ -13,7 +13,6 @@ kleuren = {
 for i in range(len(fruitmand)):
     fruitmand[i] = fruitmand[i] | {'color': [kleuren[i]]}
 
-fruit = None
 max_lengte = 0
 for i in fruitmand:
     if len((i)['name']) > max_lengte:
@@ -22,5 +21,4 @@ for i in fruitmand:
         name = i['name']
         kleur = i['color']
         gewicht = i['weight']
-        fruit = (i)
 print(f'de {name} ({max_lengte} letters) heeft een {kleur} kleur en een gewicht van {gewicht}.')
