@@ -1,5 +1,8 @@
 from fruitmand import fruitmand
-fruitmand.pop(4)
+for i in range (0,len(fruitmand)):
+    if fruitmand[i]['name'] == 'druif':
+        fruitmand.pop(i)
+        break
 colors = []
 for i in range(0,len(fruitmand)):
     if fruitmand[i]['color'] not in colors:
