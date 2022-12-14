@@ -7,7 +7,7 @@ if vraag != 'ja':
     print('oke')
     sys.exit
 
-while ronde < 2 and vraag == 'ja':
+while ronde < 20 and vraag == 'ja':
     getal = random.randint(1,1000)
     punten = 0
     while vraag == 'ja':

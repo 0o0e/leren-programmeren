@@ -11,13 +11,13 @@ kleuren = {
 }
 
 for i in range(len(fruitmand)):
-    fruitmand[i] = fruitmand[i] | {'color': [kleuren[i]]}
+    # fruitmand[i] = fruitmand[i] | {'color': [kleuren[i]]}
+    fruitmand[i] += fruitmand[i]['color' : [kleuren[i]]]
 
 max_lengte = 0
 for i in fruitmand:
     if len((i)['name']) > max_lengte:
         max_lengte = len((i)['name'])
-        print(max_lengte)
         name = i['name']
         kleur = i['color']
         gewicht = i['weight']
