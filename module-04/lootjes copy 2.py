@@ -26,7 +26,7 @@ while len(namen) < aantal:
 tellen = 0
 ok = False
 while not ok:
-    print(nieuwelijst)
+    # print(nieuwelijst)
     for i in namen:
         random_naam = random.choice(nieuwelijst)
         if len(nieuwelijst) == 1 and random_naam == i:
