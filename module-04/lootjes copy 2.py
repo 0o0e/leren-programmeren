@@ -20,13 +20,12 @@ while len(namen) < aantal:
         namen.append(name)
         nieuwelijst.append(name)
         teller +=1
-
+# 
 
 
 tellen = 0
 ok = False
 while not ok:
-    # print(nieuwelijst)
     for i in namen:
         random_naam = random.choice(nieuwelijst)
         if len(nieuwelijst) == 1 and random_naam == i:
@@ -36,7 +35,7 @@ while not ok:
                 nieuwelijst.append(namn)
             # ok = False
         else:
-            random_naam = random.choice(nieuwelijst)
+            # random_naam = random.choice(nieuwelijst)
             while random_naam == i:
                 random_naam = random.choice(nieuwelijst)
             naam[i] = random_naam
