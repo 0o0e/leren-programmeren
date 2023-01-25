@@ -1,6 +1,8 @@
 import random
 
 
+
+
 namen = []
 naam = {}
 nieuwelijst = []

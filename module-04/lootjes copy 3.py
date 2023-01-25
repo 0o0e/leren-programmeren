@@ -1,11 +1,11 @@
 import random
 
 
-
-
-namen = [] 
-naam = {}
-nieuwelijst = []
+123 #int
+'abc' #string
+namen = [] #lijst
+naam = {} # dictionary
+nieuwelijst = [] #lijst
 
 # aantal deelnemers
 aantal= int(input('Hoeveel deelnemers zijn er? '))
