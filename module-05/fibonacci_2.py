@@ -1,10 +1,10 @@
 antw = int(input('hoe vaak? '))
 
-def fibionacci(antw):
-    if antw <= 1:
-        return antw
+def fibionacci(hoeveel):
+    if hoeveel <= 1:
+        return hoeveel
     else:
-        return (fibionacci(antw -1) + fibionacci(antw -2))
+        return (fibionacci(hoeveel -1) + fibionacci(hoeveel -2))
 if antw < 0:
     print('alleen getallen boven 0 ')
 else:

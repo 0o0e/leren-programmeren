@@ -10,7 +10,6 @@ if vraag != 'ja':
 
 while ronde < MAXRONDES and vraag == 'ja':
     getal = random.randint(1,1000)
-    print(getal)
     punten = 0
     geraden = False
     while punten < 10 and geraden == False : #zolang niet geraden en het aantal pogingen kleiner dan 10
