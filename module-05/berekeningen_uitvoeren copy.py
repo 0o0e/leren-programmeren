@@ -20,47 +20,56 @@ while True:
         choice = input(f'Wil je wat met de uitkomst ({uitkomst}) doen? A) iets optellen, B) iets aftrekken, C) met iets vermenigvuldigen, D) ergens door delen, E) ophogen, F) verlagen, G) verdubbelen, H) halveren of I) niets? ').lower()
         if choice == 'i':
             break
-    if choice !='e' and choice != 'f' and choice !='g' and choice !='h' and choice != 'i':
-        if uitkomst != n1:
-            n1 = int(input('noem een getal: '))
-        else:
-            n1 = uitkomst
+    
+    if uitkomst != n1:
+        n1 = int(input('noem een getal: '))
+    else:
+        n1 = uitkomst
+
+    if choice == 'e' or choice == 'f': 
+        n2 = 1
+    elif choice == 'g' or choice == 'h':
+            n2 = 2
+    else:
         n2 = int(input('noem nog een getal: '))
-    if choice == 'a':
+
+
+    if choice == 'a' or choice == 'e':
         uitkomst =(addition(n1,n2))
         n1 = uitkomst
-    if choice =='b':
+    if choice =='b' or choice == 'f':
         uitkomst=(subtraction(n1,n2))
         n1 = uitkomst
-    if choice =='c':
+    if choice =='c' or choice == 'g':
         uitkomst=(multiplication(n1,n2))
-        n1 = uitkomst
-    if choice =='d':
+        n1 = uitkomst 
+    if choice =='d' or choice == 'h':
         uitkomst=(division(n1,n2))
         n1 = uitkomst
 
-    if choice == 'e' or choice == 'f' and choice!='i':
-        n2 = 1
-        if n1 != uitkomst:
-            n1 = int(input('noem een getal: '))
-        else: 
-            n1 = uitkomst
-    if choice == 'e':
-        uitkomst= (addition(n1,n2))
-        n1 = uitkomst
-    if choice == 'f':
-        uitkomst= (subtraction(n1,n2))
-        n1 = uitkomst
-    if choice == 'g' or choice == 'h' and choice!='i':
-        n2 = 2
-        if uitkomst != n1:
-            n1 = int(input('noem een getal: '))
-        else: n1 = uitkomst
-        if choice == 'g':
-            uitkomst= (multiplication(n1,n2))
-            n1 = uitkomst
-        if choice == 'h':
-            uitkomst = (division(n1,n2))
-            n1 = uitkomst
+    # if choice == 'e' or choice == 'f':
+    #     n2 = 1
+    #     if n1 != uitkomst:
+    #         n1 = int(input('noem een getal: '))
+    #     else: 
+    #         n1 = uitkomst
+    # if choice == 'e':
+    #     uitkomst= (addition(n1,n2))
+    #     n1 = uitkomst
+    # if choice == 'f':
+    #     uitkomst= (subtraction(n1,n2))
+    #     n1 = uitkomst
+
+    # if choice == 'g' or choice == 'h':
+    #     n2 = 2
+    #     if uitkomst != n1:
+    #         n1 = int(input('noem een getal: '))
+    #     else: n1 = uitkomst
+    #     if choice == 'g':
+    #         uitkomst= (multiplication(n1,n2))
+    #         n1 = uitkomst
+    #     if choice == 'h':
+    #         uitkomst = (division(n1,n2))
+    #         n1 = uitkomst
     print(uitkomst)
 
