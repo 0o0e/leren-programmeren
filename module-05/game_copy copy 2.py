@@ -9,8 +9,6 @@ def typewriter(string):
             time.sleep(1)
     
 
-uitkomst = ''
-
 def steenpapierschaarr():
     global uitkomst
     choices = ['rock','paper','scissors']

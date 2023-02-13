@@ -13,6 +13,7 @@ mainCharacter = {
         'copper' : 5
     }
 }
+mainCharacter['name'] = 'esma'
 
 friends = []
 

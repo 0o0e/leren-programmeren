@@ -5,19 +5,37 @@ from data import JOURNEY_IN_DAYS
 ##################### M04.D02.O2 #####################
 
 def copper2silver(amount:int) -> float:
-    pass
+    answer =amount / 10
+    return answer
 
 def silver2gold(amount:int) -> float:
-    pass
+    answer =amount / 5
+    return answer
 
 def copper2gold(amount:int) -> float:
-    pass
+    amount = copper2silver(amount)
+    answer = silver2gold(amount)
+    return answer
+
 
 def platinum2gold(amount:int) -> float:
-    pass
+    answer =amount *25
+    return answer
 
 def getPersonCashInGold(personCash:dict) -> float:
-    pass
+    answer = 0
+
+    for key, value in personCash.items():
+        if key == 'platinum':
+            answer += platinum2gold(value)
+        elif key == 'silver':
+            answer+= silver2gold(value)
+        elif key == 'copper':
+            answer += copper2gold(value)
+        elif key == 'gold':
+            answer += value
+        
+    return answer
 
 ##################### M04.D02.O4 #####################
 
