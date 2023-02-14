@@ -87,16 +87,39 @@ def getTotalRentalCost(horses:int, tents:int) -> float:
 
     COST_HORSE_GOLD_PER_DAY = silver2gold(COST_HORSE_SILVER_PER_DAY)
     total = (COST_TENT_GOLD_PER_DAY * tents) + ((COST_HORSE_GOLD_PER_DAY * horses) * JOURNEY_IN_DAYS) 
-    print(total)
     return total
 
 ##################### M04.D02.O7 #####################
 
 def getItemsAsText(items:list) -> str:
-    pass
+    aa = ''
+    for i in range (0, len(items)):
+        aa += str(items[i]['amount'])  + items[i]['unit'] + ' '+ items[i]['name']
+        if i < len(items) -1:
+            aa += ', '
+    return aa
+        
 
 def getItemsValueInGold(items:list) -> float:
-    pass
+    amount_gold = 0
+    for i in range (0,len(items)):
+        if items[i]['price']['type'] == 'copper':
+            amount_in_copper =items[i]['price']['amount']
+            amount_gold += copper2gold(amount_in_copper) * items[i]['amount']
+            # amount_gold += amount_gold * items[i]['amount']
+
+        elif items[i]['price']['type'] == 'silver':
+            amount_in_silver =items[i]['price']['amount']
+            amount_gold += silver2gold(amount_in_silver) * items[i]['amount']
+
+        elif items[i]['price']['type'] == 'platinum':
+            amount_in_platinum =items[i]['price']['amount']
+            amount_gold += platinum2gold(amount_in_platinum) * items[i]['amount']
+
+        elif items[i]['price']['type'] == 'gold':
+            amount_in_gold = items[i]['price']['amount']
+            amount_gold += amount_in_gold * items[i]['amount']
+    return amount_gold
 
 ##################### M04.D02.O8 #####################
 
