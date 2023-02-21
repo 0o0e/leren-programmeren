@@ -7,22 +7,18 @@ from data import JOURNEY_IN_DAYS , COST_FOOD_HUMAN_COPPER_PER_DAY, COST_FOOD_HOR
 ##################### M04.D02.O2 #####################
 
 def copper2silver(amount:int) -> float:
-    answer =amount / 10
-    return answer
+    return amount / 10
 
 def silver2gold(amount:int) -> float:
-    answer =amount / 5
-    return answer
+    return amount / 5
 
 def copper2gold(amount:int) -> float:
     amount = copper2silver(amount)
-    answer = silver2gold(amount)
-    return answer
+    return silver2gold(amount)
 
 
 def platinum2gold(amount:int) -> float:
-    answer =amount *25
-    return answer
+    return amount *25
 
 def getPersonCashInGold(personCash:dict) -> float:
     answer = 0
@@ -74,20 +70,16 @@ def getAdventuringFriends(friends:list) -> list:
 ##################### M04.D02.O6 #####################
 
 def getNumberOfHorsesNeeded(people:int) -> int:
-    answer = math.ceil(people / 2)
-    return answer
+    return math.ceil(people / 2)
 
 def getNumberOfTentsNeeded(people:int) -> int:
-    answer = math.ceil(people / 3)
-    return answer
+    return math.ceil(people / 3)
 
 
 def getTotalRentalCost(horses:int, tents:int) -> float:
     COST_TENT_GOLD_PER_DAY = COST_TENT_GOLD_PER_WEEK *2
-
     COST_HORSE_GOLD_PER_DAY = silver2gold(COST_HORSE_SILVER_PER_DAY)
-    total = (COST_TENT_GOLD_PER_DAY * tents) + ((COST_HORSE_GOLD_PER_DAY * horses) * JOURNEY_IN_DAYS) 
-    return total
+    return (COST_TENT_GOLD_PER_DAY * tents) + ((COST_HORSE_GOLD_PER_DAY * horses) * JOURNEY_IN_DAYS) 
 
 ##################### M04.D02.O7 #####################
 
