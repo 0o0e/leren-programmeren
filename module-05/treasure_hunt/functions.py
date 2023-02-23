@@ -15,31 +15,31 @@ def silver2gold(amount:int) -> float:
 def copper2gold(amount:int) -> float:
     amount = copper2silver(amount)
     return silver2gold(amount)
-
-
+ 
+ 
 def platinum2gold(amount:int) -> float:
     return amount *25
 
 def getPersonCashInGold(personCash:dict) -> float:
-    answer = 0
+    amount_gold = 0
 
     for key, value in personCash.items():
         if key == 'platinum':
-            answer += platinum2gold(value)
+            amount_gold += platinum2gold(value)
         elif key == 'silver':
-            answer+= silver2gold(value)
+            amount_gold+= silver2gold(value)
         elif key == 'copper':
-            answer += copper2gold(value)
+            amount_gold += copper2gold(value)
         elif key == 'gold':
-            answer += value
+            amount_gold += value
         
-    return answer
+    return amount_gold
 
 ##################### M04.D02.O4 #####################
 
 def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
-    people_amount = people * 4
-    horse_amount = horses * 3
+    people_amount = people * COST_FOOD_HUMAN_COPPER_PER_DAY
+    horse_amount = horses * COST_FOOD_HORSE_COPPER_PER_DAY
     gold=copper2gold(people_amount) + copper2gold(horse_amount)
     total = gold * JOURNEY_IN_DAYS
     return round(total,2)
@@ -48,11 +48,11 @@ def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
 
 def getFromListByKeyIs(list:list, key:str, value:any) -> list:
     newlist =[]
-    for i in range (0,len (list)):
-        if list[i][key] == value:
-            newlist.append(list[i])
+    for item in list:
+        if item[key] == value:
+            newlist.append(item)
     return newlist
-    
+
 
 def getAdventuringPeople(people:list) -> list:
     return getFromListByKeyIs(people,'adventuring',True)
@@ -62,11 +62,9 @@ def getShareWithFriends(friends:list) -> int:
     return getFromListByKeyIs(friends,'shareWith',True)
 
 def getAdventuringFriends(friends:list) -> list:
-    newlist= []
-    for teller in range (0,len(friends)):
-        if friends[teller]['adventuring'] and friends[teller]['shareWith']: 
-            newlist.append(friends[teller])
-    return newlist
+    adventuring_friends = getAdventuringFriends(friends) 
+    sharewith = getShareWithFriends(adventuring_friends)
+    return sharewith
 ##################### M04.D02.O6 #####################
 
 def getNumberOfHorsesNeeded(people:int) -> int:
@@ -77,9 +75,9 @@ def getNumberOfTentsNeeded(people:int) -> int:
 
 
 def getTotalRentalCost(horses:int, tents:int) -> float:
-    COST_TENT_GOLD_PER_DAY = COST_TENT_GOLD_PER_WEEK *2
-    COST_HORSE_GOLD_PER_DAY = silver2gold(COST_HORSE_SILVER_PER_DAY)
-    return (COST_TENT_GOLD_PER_DAY * tents) + ((COST_HORSE_GOLD_PER_DAY * horses) * JOURNEY_IN_DAYS) 
+    tents_total_cost = math.ceil(JOURNEY_IN_DAYS / 7) * COST_TENT_GOLD_PER_WEEK * tents
+    horses_total_cost = (silver2gold(COST_HORSE_SILVER_PER_DAY)) * horses * JOURNEY_IN_DAYS
+    return tents_total_cost + horses_total_cost
 
 ##################### M04.D02.O7 #####################
 
@@ -94,23 +92,16 @@ def getItemsAsText(items:list) -> str:
 
 def getItemsValueInGold(items:list) -> float:
     amount_gold = 0
-    for i in range (0,len(items)):
-        if items[i]['price']['type'] == 'copper':
-            amount_in_copper =items[i]['price']['amount']
-            amount_gold += copper2gold(amount_in_copper) * items[i]['amount']
-            # amount_gold += amount_gold * items[i]['amount']
-
-        elif items[i]['price']['type'] == 'silver':
-            amount_in_silver =items[i]['price']['amount']
-            amount_gold += silver2gold(amount_in_silver) * items[i]['amount']
-
-        elif items[i]['price']['type'] == 'platinum':
-            amount_in_platinum =items[i]['price']['amount']
-            amount_gold += platinum2gold(amount_in_platinum) * items[i]['amount']
-
-        elif items[i]['price']['type'] == 'gold':
-            amount_in_gold = items[i]['price']['amount']
-            amount_gold += amount_in_gold * items[i]['amount']
+    for i in (items):
+        if i['price']['type'] == 'copper':
+            amount_gold += (copper2gold(i['price']['amount'])) * i['amount']
+        elif i['price']['type'] == 'silver':
+            amount_gold += (silver2gold(i['price']['amount'])) * i['amount']
+        elif i['price']['type'] == 'platinum':
+            amount_gold += (platinum2gold(i['price']['amount'])) * i['amount']
+        elif i['price']['type'] == 'gold':
+            amount_in_gold = i['price']['amount']
+            amount_gold += amount_in_gold * i['amount']
     return amount_gold
 
 ##################### M04.D02.O8 #####################
