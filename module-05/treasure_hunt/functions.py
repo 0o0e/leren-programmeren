@@ -92,7 +92,7 @@ def getItemsAsText(items:list) -> str:
 
 def getItemsValueInGold(items:list) -> float:
     amount_gold = 0
-    for i in (items):
+    for i in items:
         if i['price']['type'] == 'copper':
             amount_gold += (copper2gold(i['price']['amount'])) * i['amount']
         elif i['price']['type'] == 'silver':
@@ -106,7 +106,19 @@ def getItemsValueInGold(items:list) -> float:
 ##################### M04.D02.O8 #####################
 
 def getCashInGoldFromPeople(people:list) -> float:
-    pass
+    total_cash = 0
+    for i in people:
+        if i['cash']['platinum'] > 0:
+            total_cash += platinum2gold(i['cash']['platinum'])
+        if i['cash']['silver'] > 0:
+            total_cash += silver2gold(i['cash']['silver'])
+        if i['cash']['copper'] > 0:
+            total_cash += copper2gold(i['cash']['copper'])
+        if i['cash']['gold'] > 0:
+            total_cash += (i['cash']['gold'])
+    return total_cash
+
+        
 
 ##################### M04.D02.O9 #####################
 
