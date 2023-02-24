@@ -100,8 +100,7 @@ def getItemsValueInGold(items:list) -> float:
         elif i['price']['type'] == 'platinum':
             amount_gold += (platinum2gold(i['price']['amount'])) * i['amount']
         elif i['price']['type'] == 'gold':
-            amount_in_gold = i['price']['amount']
-            amount_gold += amount_in_gold * i['amount']
+            amount_gold += i['price']['amount'] * i['amount']
     return amount_gold
 
 ##################### M04.D02.O8 #####################
