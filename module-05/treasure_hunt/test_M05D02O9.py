@@ -58,9 +58,6 @@ if getTotalInvestorsCosts(testInverstorsList2, testGearList2) != 20.72:
 else:
     print_colorvars(vars=['Test 3 is correct'], color='green')
     
-print(getTotalInvestorsCosts(testInverstorsList2,testGearList2))
-
-
 testGearList3 = [{
     'amount' : 1,
     'price' : {
@@ -102,5 +99,3 @@ if getTotalInvestorsCosts(testInverstorsList3, testGearList3) != 158.68:
     print_colorvars(vars=['Test 5 is False'], color='red')
 else:
     print_colorvars(vars=['Test 5 is correct'], color='green')
-
-print(getTotalInvestorsCosts(testInverstorsList3,testGearList3))
