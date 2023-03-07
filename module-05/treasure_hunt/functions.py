@@ -127,18 +127,18 @@ def getCashInGoldFromPeople(people:list) -> float:
 ##################### M04.D02.O9 #####################
 
 def getInterestingInvestors(investors:list) -> list:
-    InterestingInvestors =[]
+    interestinginvestors =[]
     for i in investors:
         if i['profitReturn'] < 10:
-            InterestingInvestors.append(i)
-    return InterestingInvestors
+            interestinginvestors.append(i)
+    return interestinginvestors
 
 def getAdventuringInvestors(investors:list) -> list:
-    adventuringInvestors =[]
+    adventuringinvestors =[]
     for i in (getInterestingInvestors(investors)):
         if i['adventuring'] == True:
-            adventuringInvestors.append(i)
-    return adventuringInvestors
+            adventuringinvestors.append(i)
+    return adventuringinvestors
 
 
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
