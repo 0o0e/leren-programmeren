@@ -169,11 +169,19 @@ def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
 ##################### M04.D02.O12 #####################
 
 def getInvestorsCuts(profitGold:float, investors:list) -> list:
-    pass
+    investors = getInterestingInvestors(investors)
+    newlist = []
+    for i in investors:
+        antw = (profitGold / 100) * i['profitReturn']
+        newlist.append(round(antw,2))
+    return newlist
+
 
 def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> float:
-    pass
-
+    for i in investorsCuts:
+        profitGold = profitGold - i
+    antw = round((profitGold / fellowship),2)
+    return antw
 ##################### M04.D02.O13 #####################
 
 def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
