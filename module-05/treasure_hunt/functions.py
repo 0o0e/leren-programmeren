@@ -180,8 +180,7 @@ def getInvestorsCuts(profitGold:float, investors:list) -> list:
 def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> float:
     for i in investorsCuts:
         profitGold = profitGold - i
-    antw = round((profitGold / fellowship),2)
-    return antw
+    return round((profitGold / fellowship),2)
 ##################### M04.D02.O13 #####################
 
 def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
