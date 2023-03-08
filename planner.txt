@@ -1,1 +1,21 @@
 planner
+
+ma:
+
+di:
+
+wo:
+- werken aan html en js
+- cjv python
+
+do:
+
+
+vr:
+
+
+za:
+
+
+zo:
+
