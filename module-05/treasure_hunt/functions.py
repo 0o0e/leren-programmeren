@@ -111,18 +111,12 @@ def getItemsValueInGold(items:list) -> float:
 
 def getCashInGoldFromPeople(people:list) -> float:
     total_cash = 0
-    for i in people:
-        if i['cash']['platinum'] > 0:
-            total_cash += platinum2gold(i['cash']['platinum'])
-        if i['cash']['silver'] > 0:
-            total_cash += silver2gold(i['cash']['silver'])
-        if i['cash']['copper'] > 0:
-            total_cash += copper2gold(i['cash']['copper'])
-        if i['cash']['gold'] > 0:
-            total_cash += (i['cash']['gold'])
+    for person in people:
+        total_cash += platinum2gold(person['cash']['platinum'])
+        total_cash += silver2gold(person['cash']['silver'])
+        total_cash += copper2gold(person['cash']['copper'])
+        total_cash += (person['cash']['gold'])
     return total_cash
-
-        
 
 ##################### M04.D02.O9 #####################
 
@@ -134,21 +128,19 @@ def getInterestingInvestors(investors:list) -> list:
     return interestinginvestors
 
 def getAdventuringInvestors(investors:list) -> list:
-    adventuringinvestors =[]
-    for i in getInterestingInvestors(investors):
-        if i['adventuring'] == True:
-            adventuringinvestors.append(i)
-    return adventuringinvestors
+    investors =getInterestingInvestors(investors)
+    investors =getAdventuringPeople(investors)
+    return investors
 
 
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
-    investor = getAdventuringInvestors(investors)
+    investors = getAdventuringInvestors(investors)
 
     food_cost = getJourneyFoodCostsInGold(1,1)
     gear_cost = getItemsValueInGold(gear)
     rental_cost = getTotalRentalCost(1,1)
 
-    total = (rental_cost + food_cost + gear_cost) * len(investor)
+    total = (rental_cost + food_cost + gear_cost) * len(investors)
     return total
 
 
@@ -170,16 +162,17 @@ def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
 
 def getInvestorsCuts(profitGold:float, investors:list) -> list:
     newlist = []
-    for i in getInterestingInvestors(investors):
-        antw = (profitGold / 100) * i['profitReturn']
+    for investor in getInterestingInvestors(investors):
+        antw = (profitGold / 100) * investor['profitReturn']
         newlist.append(round(antw,2))
     return newlist
 
 
 def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> float:
-    for i in investorsCuts:
-        profitGold -= i
+    for investor_cut in investorsCuts:
+        profitGold -= investor_cut
     return round((profitGold / fellowship),2)
+
 ##################### M04.D02.O13 #####################
 
 def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
