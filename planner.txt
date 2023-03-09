@@ -5,11 +5,12 @@ ma:
 di:
 
 wo:
-- werken aan html en js
+- werken aan js
 - cjv python
 
 do:
-
+- cjv python (19)
+- verderwerken python(opdrachten na cjv 19) en js(ruit)
 
 vr:
 

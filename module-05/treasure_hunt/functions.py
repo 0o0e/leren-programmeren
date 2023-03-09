@@ -135,7 +135,7 @@ def getInterestingInvestors(investors:list) -> list:
 
 def getAdventuringInvestors(investors:list) -> list:
     adventuringinvestors =[]
-    for i in (getInterestingInvestors(investors)):
+    for i in getInterestingInvestors(investors):
         if i['adventuring'] == True:
             adventuringinvestors.append(i)
     return adventuringinvestors
@@ -146,8 +146,9 @@ def getTotalInvestorsCosts(investors:list, gear:list) -> float:
 
     food_cost = getJourneyFoodCostsInGold(1,1)
     gear_cost = getItemsValueInGold(gear)
+    rental_cost = getTotalRentalCost(1,1)
 
-    total = ((getTotalRentalCost(1,1)) + food_cost + gear_cost) * len(investor)
+    total = (rental_cost + food_cost + gear_cost) * len(investor)
     return total
 
 
@@ -169,9 +170,8 @@ def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
 ##################### M04.D02.O12 #####################
 
 def getInvestorsCuts(profitGold:float, investors:list) -> list:
-    investors = getInterestingInvestors(investors)
     newlist = []
-    for i in investors:
+    for i in getInterestingInvestors(investors):
         antw = (profitGold / 100) * i['profitReturn']
         newlist.append(round(antw,2))
     return newlist
@@ -179,7 +179,7 @@ def getInvestorsCuts(profitGold:float, investors:list) -> list:
 
 def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> float:
     for i in investorsCuts:
-        profitGold = profitGold - i
+        profitGold -= i
     return round((profitGold / fellowship),2)
 ##################### M04.D02.O13 #####################
 
