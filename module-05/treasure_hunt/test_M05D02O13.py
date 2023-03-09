@@ -217,11 +217,11 @@ inverstorsTestList3 = [{
 }]
 
 result8 = [
-    {'name': 'TestChar2', 'start': 30.0, 'end': 75.5}, 
-    {'name': 'TestFriend1', 'start': 20.0, 'end': 35.5}, 
-    {'name': 'TestFriend2', 'start': 15.0, 'end': 30.5}, 
-    {'name': 'TestInvestor1', 'start': 250.0, 'end': 287.5}, 
-    {'name': 'TestInvestor2', 'start': 125.0, 'end': 131.0}, 
+    {'name': 'TestChar2', 'start': 30.0, 'end': 75.5},
+    {'name': 'TestFriend1', 'start': 20.0, 'end': 35.5},
+    {'name': 'TestFriend2', 'start': 15.0, 'end': 30.5},
+    {'name': 'TestInvestor1', 'start': 250.0, 'end': 287.5},
+    {'name': 'TestInvestor2', 'start': 125.0, 'end': 131.0},
     {'name': 'TestInvestor3', 'start': 100.0, 'end': 100.0}
 ]
 
@@ -229,4 +229,5 @@ if getEarnigs(120, testMainCharacter2, friendsTestList1, inverstorsTestList3) !=
     print_colorvars(vars=['Test 8 is False'], color='red')
 else:
     print_colorvars(vars=['Test 8 is correct'], color='green')
+    
 print(getEarnigs(120, testMainCharacter2, friendsTestList1, inverstorsTestList3))
