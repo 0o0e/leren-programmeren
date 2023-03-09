@@ -34,8 +34,10 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
     #     'start'  : begincash,
     #     'end'    : eindcash
     #     })
-    for i in mainCharacter:
-        begincash = 
+
+    
+    # for i in mainCharacter:
+    #     begincash = 
 
 
     return earnings
