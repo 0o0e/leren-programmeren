@@ -123,7 +123,7 @@ def getCashInGoldFromPeople(people:list) -> float:
 def getInterestingInvestors(investors:list) -> list:
     interestinginvestors =[]
     for i in investors:
-        if i['profitReturn'] < 10:
+        if i['profitReturn'] <= 10:
             interestinginvestors.append(i)
     return interestinginvestors
 
@@ -170,13 +170,60 @@ def getInvestorsCuts(profitGold:float, investors:list) -> list:
 
 def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> float:
     for investor_cut in investorsCuts:
-        profitGold -= investor_cut
+        profitGold = profitGold - investor_cut
     return round((profitGold / fellowship),2)
 
 ##################### M04.D02.O13 #####################
-
 def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
-    pass
+    people = [mainCharacter] + friends + investors
+    earnings = []
+    
+    
+
+    # haal de juiste inhoud op
+    adventuringFriends = getAdventuringFriends(friends)
+    interestingInvestors = getInterestingInvestors(investors)
+    adventuringInvestors = getAdventuringInvestors(investors)
+    investorsCuts = getInvestorsCuts(profitGold,interestingInvestors)
+    goldCut = 0.0
+    fellowship = len(mainCharacter) + len(adventuringFriends) + len(adventuringInvestors)
+
+    # verdeel de uitkomsten
+    for i in interestingInvestors:
+        begincash = round(getPersonCashInGold(i['cash']),2)
+        eindcash =  (round(profitGold / 100 * i[ 'profitReturn'] , 2)) + begincash
+        # eindcash_adventurer_investors = getAdventurerCut(profitGold,investorsCuts,)
+        earnings.append({
+        'name'   : i['name'],
+        'start'  : begincash,
+        'end'    : eindcash
+        })
+    # for i in adventuringInvestors:
+    #     begincash = round(getPersonCashInGold(i['cash']),2)
+    #     eindcash = round((getAdventurerCut(profitGold,investors,fellowship)))
+    #     earnings.append({
+    #     'name'   : i['name'],
+    #     'start'  : begincash,
+    #     'end'    : eindcash
+    #     })
+
+
+    # for person in people:
+
+
+
+        #code aanvullen
+
+        # earnings.append({
+        #     'name'   : '??',
+        #     'start'  : 0.0,
+        #     'end'    : 0.0
+        # })
+
+    return earnings
+
+
+
 
 ##################### view functions #####################
 def print_colorvars(txt:str='{}', vars:list=[], color:str='yellow') -> None:
