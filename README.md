@@ -15,7 +15,7 @@ do:
 vr:
 - python opdracht 13 van treasure hunt
 - javascript cjv 
-- html bootstra mobiele versie portfolio
+- html bootstrap mobiele versie portfolio
 
 za:
 
