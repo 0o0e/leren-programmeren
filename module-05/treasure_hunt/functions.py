@@ -190,16 +190,26 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
 
     # verdeel de uitkomsten
     for i in interestingInvestors:
-        begincash = round(getPersonCashInGold(i['cash']),2)
-        eindcash =  (round(profitGold / 100 * i[ 'profitReturn'] , 2)) + begincash
-        # eindcash_adventurer_investors = getAdventurerCut(profitGold,investorsCuts,)
-        earnings.append({
-        'name'   : i['name'],
-        'start'  : begincash,
-        'end'    : eindcash
-        })
+        if i['adventuring'] == True:
+            begincash = round(getPersonCashInGold(i['cash']),2)
+            eindcash =  (round(profitGold / 100 * i[ 'profitReturn'] , 2)) + (begincash) + ((profitGold - sum(getInvestorsCuts(profitGold,investors)) ) / len(people))
+            earnings.append({
+            'name'   : i['name'],
+            'start'  : begincash,
+            'end'    : eindcash
+            })
+        else:
+            begincash = round(getPersonCashInGold(i['cash']),2)
+            eindcash =  (round(profitGold / 100 * i[ 'profitReturn'] , 2)) + begincash
+            # eindcash_adventurer_investors = getAdventurerCut(profitGold,investorsCuts,)
+            earnings.append({
+            'name'   : i['name'],
+            'start'  : begincash,
+            'end'    : eindcash
+            })
+
     # for i in adventuringInvestors:
-    #     begincash = round(getPersonCashInGold(i['cash']),2)
+    #     begincash = round(getCashInGoldFromPeople(adventuringInvestors),2)
     #     eindcash = round((getAdventurerCut(profitGold,investors,fellowship)))
     #     earnings.append({
     #     'name'   : i['name'],
@@ -207,20 +217,13 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
     #     'end'    : eindcash
     #     })
 
+    
+    # for i in mainCharacter:
+    #     begincash = 
 
-    # for person in people:
-
-
-
-        #code aanvullen
-
-        # earnings.append({
-        #     'name'   : '??',
-        #     'start'  : 0.0,
-        #     'end'    : 0.0
-        # })
 
     return earnings
+
 
 
 
