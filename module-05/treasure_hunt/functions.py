@@ -189,7 +189,7 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
     fellowship = len(mainCharacter) + len(adventuringFriends) + len(adventuringInvestors)
 
     # verdeel de uitkomsten
-    for i in interestingInvestors:
+    for i in investors:
         if i['adventuring'] == True:
             begincash = round(getPersonCashInGold(i['cash']),2)
             eindcash =  (round(profitGold / 100 * i[ 'profitReturn'] , 2)) + (begincash) + ((profitGold - sum(getInvestorsCuts(profitGold,investors)) ) / len(people))
@@ -198,7 +198,7 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
             'start'  : begincash,
             'end'    : eindcash
             })
-        else:
+        elif i['adventuring'] == True:
             begincash = round(getPersonCashInGold(i['cash']),2)
             eindcash =  (round(profitGold / 100 * i[ 'profitReturn'] , 2)) + begincash
             # eindcash_adventurer_investors = getAdventurerCut(profitGold,investorsCuts,)
@@ -207,15 +207,14 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
             'start'  : begincash,
             'end'    : eindcash
             })
-
-    # for i in adventuringInvestors:
-    #     begincash = round(getCashInGoldFromPeople(adventuringInvestors),2)
-    #     eindcash = round((getAdventurerCut(profitGold,investors,fellowship)))
-    #     earnings.append({
-    #     'name'   : i['name'],
-    #     'start'  : begincash,
-    #     'end'    : eindcash
-    #     })
+        else:
+            begincash = round(getPersonCashInGold(i['cash']),2)
+            eindcash = begincash
+            earnings.append({
+            'name'   : i['name'],
+            'start'  : begincash,
+            'end'    : eindcash
+            })
 
     
     # for i in mainCharacter:
