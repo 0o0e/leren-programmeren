@@ -22,3 +22,6 @@ za:
 
 zo:
 
+vrijdag 16/03:
+- javascript cjv
+- python opdrcht 13 treasyre hunt

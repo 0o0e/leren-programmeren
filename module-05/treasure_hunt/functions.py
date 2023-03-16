@@ -192,29 +192,29 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
     for i in investors:
         if i['adventuring'] == True:
             begincash = round(getPersonCashInGold(i['cash']),2)
-            eindcash =  (round(profitGold / 100 * i[ 'profitReturn'] , 2)) + (begincash) + ((profitGold - sum(getInvestorsCuts(profitGold,investors)) ) / len(people))
-            earnings.append({
-            'name'   : i['name'],
-            'start'  : begincash,
-            'end'    : eindcash
-            })
-        elif i['adventuring'] == True:
+            eindcash =  (round(profitGold / 100 * i[ 'profitReturn'] , 2)) + begincash + (profitGold - sum(getInvestorsCuts(profitGold,investors) ) / fellowship)
+            # earnings.append({
+            # 'name'   : i['name'],
+            # 'start'  : begincash,
+            # 'end'    : eindcash
+            # })
+        elif i['adventuring'] == False and i['profitReturn'] <= 10:
             begincash = round(getPersonCashInGold(i['cash']),2)
             eindcash =  (round(profitGold / 100 * i[ 'profitReturn'] , 2)) + begincash
             # eindcash_adventurer_investors = getAdventurerCut(profitGold,investorsCuts,)
-            earnings.append({
-            'name'   : i['name'],
-            'start'  : begincash,
-            'end'    : eindcash
-            })
+            # earnings.append({
+            # 'name'   : i['name'],
+            # 'start'  : begincash,
+            # 'end'    : eindcash
+            # })
         else:
             begincash = round(getPersonCashInGold(i['cash']),2)
             eindcash = begincash
-            earnings.append({
-            'name'   : i['name'],
-            'start'  : begincash,
-            'end'    : eindcash
-            })
+        earnings.append({
+        'name'   : i['name'],
+        'start'  : begincash,
+        'end'    : eindcash
+        })
 
     
     # for i in mainCharacter:
