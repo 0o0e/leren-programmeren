@@ -16,6 +16,7 @@ while a == True:
             b = False
         else:
             print('sorry, dat snap ik niet')
+            continue
         meer = input('wilt u meer bestellen? ')
         if meer == 'nee':
             a = False
