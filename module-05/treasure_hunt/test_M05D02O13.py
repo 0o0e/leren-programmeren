@@ -183,7 +183,6 @@ if getEarnigs(500, testMainCharacter2, friendsTestList2, inverstorsTestList2) !=
     print_colorvars(vars=['Test 7 is False'], color='red')
 else:
     print_colorvars(vars=['Test 7 is correct'], color='green')
-
 inverstorsTestList3 = [{
     'name' : 'TestInvestor1',
     'profitReturn' : 10,
@@ -230,4 +229,3 @@ if getEarnigs(120, testMainCharacter2, friendsTestList1, inverstorsTestList3) !=
 else:
     print_colorvars(vars=['Test 8 is correct'], color='green')
     
-print(getEarnigs(120, testMainCharacter2, friendsTestList1, inverstorsTestList3))
