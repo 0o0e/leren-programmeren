@@ -178,8 +178,6 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
     people = [mainCharacter] + friends + investors
     earnings = []
     
-    
-
     # haal de juiste inhoud op
     adventuringFriends = getAdventuringFriends(friends)
     interestingInvestors = getInterestingInvestors(investors)
@@ -205,6 +203,7 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
             else:
                 begincash = round(getPersonCashInGold(i['cash']),2)
                 eindcash = begincash
+
         if i in investors:
             if i['adventuring'] == True and i['profitReturn'] <= 10:
                 begincash = round(getPersonCashInGold(i['cash']),2)

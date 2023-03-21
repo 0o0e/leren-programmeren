@@ -1,5 +1,6 @@
 print('Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.')
 a = True
+meer_bestellen = True
 while a == True:
     b = True
     bolletjes = int(input('Hoeveel bolletjes wilt u? '))
@@ -17,6 +18,17 @@ while a == True:
         else:
             print('sorry, dat snap ik niet')
             continue
-        meer = input('wilt u meer bestellen? ')
-        if meer == 'nee':
-            a = False
+        
+        while meer_bestellen == True:
+            meer = input('wilt u meer bestellen? ')
+            if meer == 'nee':
+                a = False
+                meer_bestellen = False
+            if meer != 'ja' or meer != 'nee':
+                print('sorry, dat snap ik niet')
+                continue
+            if meer == 'ja':
+                meer_bestellen = False
+            
+                
+

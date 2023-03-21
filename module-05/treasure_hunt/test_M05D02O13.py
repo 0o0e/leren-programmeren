@@ -57,7 +57,6 @@ if getEarnigs(100, testMainCharacter2, [], inverstorsTestList1) != result3:
     print_colorvars(vars=['Test 3 is False'], color='red')
 else:
     print_colorvars(vars=['Test 3 is correct'], color='green')
-print(getEarnigs(100, testMainCharacter2, [], inverstorsTestList1))
 
 friendsTestList1 = [{
     'name' : 'TestFriend1',
