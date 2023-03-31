@@ -3,7 +3,7 @@ planner:
  
 vrijdag 31/03:
 - nogsteeds cjv 21 python
-- mobiele webiste hrml(verder met de laatste pagina over werk, daarna klaar)
+- mobiele webiste html(verder met de laatste pagina over werk, daarna klaar)
 - javascript buttons verder
 
 woensdag 29/03:
