@@ -1,5 +1,10 @@
 # leerpad
 planner:
+ 
+vrijdag 31/03:
+- nogsteeds cjv 21 python
+- mobiele webiste hrml(verder met de laatste pagina over werk, daarna klaar)
+- javascript buttons verder
 
 woensdag 29/03:
 - verder aan opdracht html mobiele website met bootstrap
