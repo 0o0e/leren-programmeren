@@ -4,10 +4,15 @@ bestellen = True
 while bestellen == True:
     meer_bestellen = True
 
-    hoorn_bak = bakje_of_hoorntje(aantal_bolletjes())
-    if hoorn_bak == 'sorry, zulke grote bakken hebben we niet. ':
-        while hoorn_bak == ('sorry, zulke grote bakken hebben we niet.'):
-            hoorn_bak = bakje_of_hoorntje(aantal_bolletjes())
+    aantal_bollen = aantal_bolletjes('')
+    hoorn_bak = kies_bakje_of_hoorntje(aantal_bollen,'')
+    if hoorn_bak != 'zulke grote bakken hebben we niet':
+        print(f'hier is uw {hoorn_bak} met {aantal_bollen} bolletjes.')
+    else:
+        while hoorn_bak == ('zulke grote bakken hebben we niet'):
+            print('zulke grote bakken hebben we niet')
+            break
+        continue
 
     while meer_bestellen == True:
         meer = input('wilt u meer bestellen? ')
@@ -18,4 +23,5 @@ while bestellen == True:
             print('sorry, dat snap ik niet')
         elif meer == 'ja':
             meer_bestellen = False
+            
             
