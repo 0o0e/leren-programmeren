@@ -1,6 +1,11 @@
 # leerpad
 planner:
- 
+
+woensdag 19/04:
+✔  xampp en github samen laten werken
+✔  ijssalon bon afmaken 
+
+
 vrijdag 31/03:
 - nogsteeds cjv 21 python
 - mobiele webiste html(verder met de laatste pagina over werk, daarna klaar)

@@ -3,6 +3,7 @@ print('Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille 
 
 AANTAL_KAN_NIET = 'zulke grote bakken hebben we niet'
 
+
 def aantal_bolletjes():
     bolletjes = ''
     while type(bolletjes) != int:
@@ -35,4 +36,11 @@ def meerbestellen():
         else:
             print('sorry, dat snap ik niet')
             
-     
+def bon(aantal_bolletjes,bolletjes_pr,hoorntje_prijs,bakje_pr,aantalbak,aantalhoorn):
+    print(f'bolletjes : {aantal_bolletjes} x 1.10 = ${bolletjes_pr}')
+    if bakje_pr > 0:
+        print(f'bakjes : {aantalbak} x 0.75 = ${bakje_pr}')
+    if hoorntje_prijs > 0:
+        print(f'hoorntjes : {aantalhoorn} x 1.25 = ${hoorntje_prijs}')
+    return
+
