@@ -26,3 +26,7 @@ for dict in lijst:
     print(f"{dict['name']} is {dict['age']} jaar oud ")
 
 # pc testt hello
+# testest
+for i in range(3):
+    print("aa")
+# deletelater
