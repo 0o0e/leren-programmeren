@@ -25,3 +25,4 @@ while stoppenofniet != 'stop':
 for dict in lijst:
     print(f"{dict['name']} is {dict['age']} jaar oud ")
 
+# pc testt hello
