@@ -17,8 +17,7 @@ def aantal_bolletjes():
 def bolletje_smaak(aantalbolletjes):
     lijst_smaken = []
     for i in range(1,aantalbolletjes +1):
-        smaak = input(f"Welke smaak wilt u voor bolletje nummer {i}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ")
-        lijst_smaken.append(smaak)
+        lijst_smaken.append(input(f"Welke smaak wilt u voor bolletje nummer {i}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? "))
     return lijst_smaken
 
 def kies_bakje_of_hoorntje(aantal_bollen):
@@ -63,4 +62,3 @@ def bon(bolletjes_pr,hoorntje_prijs,bakje_pr,aantalbak,aantalhoorn,smaken):
         print(f'hoorntjes : {aantalhoorn} x 1.25 = ${hoorntje_prijs}')
     print(f"totaal : ${bolletjes_pr + hoorntje_prijs + bakje_pr}")
     return
-# aaa
