@@ -62,3 +62,6 @@ def bon(bolletjes_pr,hoorntje_prijs,bakje_pr,aantalbak,aantalhoorn,smaken):
         print(f'hoorntjes : {aantalhoorn} x 1.25 = ${hoorntje_prijs}')
     print(f"totaal : ${bolletjes_pr + hoorntje_prijs + bakje_pr}")
     return
+
+
+# sskj
