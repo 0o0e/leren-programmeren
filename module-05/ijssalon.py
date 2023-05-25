@@ -2,7 +2,7 @@
 print('Welkom bij Papi Gelato.')
 
 AANTAL_KAN_NIET = 'zulke grote bakken hebben we niet'
-SNAPIKNIET = 'sorry, dat snap ik niet '
+SNAPIKNIET = 'Sorry dat is geen optie die we aanbieden...'
 
 def aantal_bolletjes():
     bolletjes = ''
@@ -11,6 +11,10 @@ def aantal_bolletjes():
             bolletjes = int(input('Hoeveel bolletjes wilt u? '))
         except ValueError:
             print(SNAPIKNIET)
+        else:
+            if bolletjes >= 8:
+                bolletjes = ''
+                continue
 
     return bolletjes
 
@@ -47,23 +51,33 @@ def meerbestellen():
 
 
             
-def bon(bolletjes_pr,hoorntje_prijs,bakje_pr,aantalbak,aantalhoorn,smaken,toppings):
+def bon(bolletjes_pr,hoorntje_prijs,bakje_pr,aantalbak,aantalhoorn,smaken,toppings,typeklant,prijs_liter):
     list =['a','c','m','v']
     print('----------papi gelato----------')
 
     for smaak in list:
         if smaak in smaken:
             aantal = smaken.count(smaak)
-            print(f"b.{smaak} : {aantal} x $1.10 = ${round(1.10 * aantal,2)}")
+            if typeklant == '1':
+                print(f"b.{smaak} : {aantal} x $1.10 = ${round(1.10 * aantal,2):.2f}")
+            elif typeklant == '2':
+                print(f"l.{smaak} : {aantal} x $9.80 = ${round(9.80 * aantal,2):.2f}")
+    totaalprijs = (bolletjes_pr + hoorntje_prijs + bakje_pr + toppings + prijs_liter)
+    if typeklant == '1':
+        if bakje_pr > 0:
+            print(f'bakjes : {aantalbak} x 0.75 = ${bakje_pr}')
+        if hoorntje_prijs > 0:
+            print(f'hoorntjes : {aantalhoorn} x 1.25 = ${hoorntje_prijs}')
+        if toppings > 0:
+            print(f'Topping :   $ {toppings:.2f}')
+        print(f"totaal : ${(totaalprijs):.2f}")
+    elif typeklant == '2':
 
-    if bakje_pr > 0:
-        print(f'bakjes : {aantalbak} x 0.75 = ${bakje_pr}')
-    if hoorntje_prijs > 0:
-        print(f'hoorntjes : {aantalhoorn} x 1.25 = ${hoorntje_prijs}')
-    if toppings > 0:
-        print(f'Topping :   $ {toppings}')
+        print(f"totaal : ${(totaalprijs + (totaalprijs / 100 * 9)):.2f}")
+        print(f"btw : ${(totaalprijs / 100 * 9):.2f}")
 
-    print(f"totaal : ${bolletjes_pr + hoorntje_prijs + bakje_pr + toppings}")
+
+
     return
 
 def toppings(hoorn_bak,aantalbollen):
@@ -71,6 +85,8 @@ def toppings(hoorn_bak,aantalbollen):
     # topping = input("Wat voor topping wilt u: A. Geen, B. Slagroom, C. Sprinkels of D. Caramel Saus? ")
     while True: 
         topping = input("Wat voor topping wilt u: A. Geen, B. Slagroom, C. Sprinkels of D. Caramel Saus? ")
+        if topping == 'a':
+            break
 
         if topping == 'b':
             prijs += 0.50
@@ -94,4 +110,20 @@ def toppings(hoorn_bak,aantalbollen):
             print(SNAPIKNIET)
             continue
     return prijs
+
+def hoeveel_liter():
+    aantal_liter = ''
+    while type(aantal_liter) != int:
+        try:
+            aantal_liter = int(input('Hoeveel liter wilt u? '))
+        except ValueError:
+            print(SNAPIKNIET)
+    return aantal_liter
+
+
+def liter_smaak(aantalliter):
+    lijst_smaken = []
+    for i in range(1,aantalliter +1):
+        lijst_smaken.append(input(f"Welke smaak wilt u voor liter nummer {i}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? "))
+    return lijst_smaken
 
