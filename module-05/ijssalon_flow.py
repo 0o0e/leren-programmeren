@@ -34,10 +34,7 @@ while bestellen == True:
 
     elif TYPE_KLANT == '1':
         aantal_bollen = aantal_bolletjes()
-        # while aantal_bollen >= 8:
-        #     print(AANTAL_KAN_NIET)
-        #     aantal_bollen = aantal_bolletjes()
-        # else:
+
         smaak = bolletje_smaak(aantal_bollen)
         hoorn_bak = kies_bakje_of_hoorntje(aantal_bollen)
         topping = toppings(hoorn_bak,aantal_bollen)
