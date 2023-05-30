@@ -74,7 +74,7 @@ def bon(bolletjes_pr,hoorntje_prijs,bakje_pr,aantalbak,aantalhoorn,smaken,toppin
     elif typeklant == '2':
 
         print(f"totaal : ${(totaalprijs + (totaalprijs / 100 * 9)):.2f}")
-        print(f"btw : ${(totaalprijs / 100 * 9):.2f}")
+        print(f"btw (6%): ${(totaalprijs / 100 * 6):.2f}")
 
 
 
@@ -123,7 +123,26 @@ def hoeveel_liter():
 
 def liter_smaak(aantalliter):
     lijst_smaken = []
-    for i in range(1,aantalliter +1):
-        lijst_smaken.append(input(f"Welke smaak wilt u voor liter nummer {i}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? "))
+    i = 1
+    while i != aantalliter + 1:
+        print(aantalliter)
+        print(i)
+        smaak = input(f"Welke smaak wilt u voor liter nummer {i}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ")
+        if smaak not in ('a','c','v','m'):
+            print(SNAPIKNIET)
+            continue
+        lijst_smaken.append(smaak)
+        i += 1
+
+
+    # for i in range(1,aantalliter +1):
+    #     print(aantalliter)
+    #     print(i)
+    #     smaak = input(f"Welke smaak wilt u voor liter nummer {i}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ")
+    #     if smaak not in ('a','c','v','m'):
+    #         print(SNAPIKNIET)
+    #         aantalliter += 1
+    #         continue
+    #     lijst_smaken.append(smaak)
     return lijst_smaken
 

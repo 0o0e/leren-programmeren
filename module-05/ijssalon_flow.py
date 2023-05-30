@@ -18,10 +18,10 @@ while bestellen == True:
     meer_bestellen = True
     TYPE_KLANT = input('Bent u 1. een particuliere klant of 2. een zakelijke klant? ')
 
-    
+
 
     if TYPE_KLANT == '2':
-
+    
         aantal_liter = hoeveel_liter()
         smaak_liter = liter_smaak(aantal_liter)
         smakenlijst += smaak_liter
@@ -45,7 +45,7 @@ while bestellen == True:
         smakenlijst += smaak
 
 
-        bolletje_pr += round((1.10 * aantal_bollen),2)
+        bolletje_pr += round((0.95 * aantal_bollen),2)
 
 
 
@@ -64,3 +64,4 @@ while bestellen == True:
             meer_bestellen = False
 bon(bolletje_pr,hoorntje_pr,bakje_pr,aantal_bak,aantal_hoorn,smakenlijst,topping_pr,TYPE_KLANT,liter_pr)
 
+ 
