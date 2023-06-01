@@ -73,8 +73,8 @@ def bon(bolletjes_pr,hoorntje_prijs,bakje_pr,aantalbak,aantalhoorn,smaken,toppin
         print(f"totaal : ${(totaalprijs):.2f}")
     elif typeklant == '2':
 
-        print(f"totaal : ${(totaalprijs + (totaalprijs / 100 * 9)):.2f}")
-        print(f"btw (9%): ${(totaalprijs / 100 * 9):.2f}")
+        print(f"totaal : ${(totaalprijs + (totaalprijs / 100 * 6)):.2f}")
+        print(f"btw (6%): ${(totaalprijs / 100 * 6):.2f}")
 
 
 
