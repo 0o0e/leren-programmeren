@@ -21,8 +21,16 @@ def aantal_bolletjes():
 
 def bolletje_smaak(aantalbolletjes):
     lijst_smaken = []
-    for i in range(1,aantalbolletjes +1):
-        lijst_smaken.append(input(f"Welke smaak wilt u voor bolletje nummer {i}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? "))
+    nummer = 1
+    while nummer != aantalbolletjes + 1:
+        smaak = input(f"Welke smaak wilt u voor bolletje nummer {nummer}? A) Aardbei, C) Chocolade of V) Vanille? ")
+        if smaak not in ('a','c','v'):
+            print(SNAPIKNIET)
+            continue
+        lijst_smaken.append(smaak)
+        nummer+=1
+
+
     return lijst_smaken
 
 
@@ -52,7 +60,7 @@ def meerbestellen():
 
             
 def bon(bolletjes_pr,hoorntje_prijs,bakje_pr,aantalbak,aantalhoorn,smaken,toppings,typeklant,prijs_liter):
-    list =['a','c','m','v']
+    list =['a','c','v']
     print('----------papi gelato----------')
 
     for smaak in list:
@@ -123,26 +131,14 @@ def hoeveel_liter():
 
 def liter_smaak(aantalliter):
     lijst_smaken = []
-    i = 1
-    while i != aantalliter + 1:
-        print(aantalliter)
-        print(i)
-        smaak = input(f"Welke smaak wilt u voor liter nummer {i}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ")
-        if smaak not in ('a','c','v','m'):
+    nummer = 1
+    while nummer != aantalliter + 1:
+        smaak = input(f"Welke smaak wilt u voor liter nummer {nummer}? A) Aardbei, C) Chocolade of V) Vanille? ")
+        if smaak not in ('a','c','v'):
             print(SNAPIKNIET)
             continue
         lijst_smaken.append(smaak)
-        i += 1
+        nummer += 1
 
-
-    # for i in range(1,aantalliter +1):
-    #     print(aantalliter)
-    #     print(i)
-    #     smaak = input(f"Welke smaak wilt u voor liter nummer {i}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ")
-    #     if smaak not in ('a','c','v','m'):
-    #         print(SNAPIKNIET)
-    #         aantalliter += 1
-    #         continue
-    #     lijst_smaken.append(smaak)
     return lijst_smaken
 
