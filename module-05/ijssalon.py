@@ -13,6 +13,7 @@ def aantal_bolletjes():
             print(SNAPIKNIET)
         else:
             if bolletjes >= 8:
+                print(SNAPIKNIET)
                 bolletjes = ''
                 continue
 
