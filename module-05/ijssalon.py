@@ -16,7 +16,6 @@ def aantal_bolletjes():
                 print(SNAPIKNIET)
                 bolletjes = ''
                 continue
-
     return bolletjes
 
 
@@ -30,8 +29,6 @@ def bolletje_smaak(aantalbolletjes):
             continue
         lijst_smaken.append(smaak)
         nummer+=1
-
-
     return lijst_smaken
 
 
@@ -60,7 +57,7 @@ def meerbestellen():
 
 
             
-def bon(bolletjes_pr,hoorntje_prijs,bakje_pr,aantalbak,aantalhoorn,smaken,toppings,typeklant,prijs_liter):
+def bon(bolletjes_pr,hoorntje_prijs,bakje_pr,aantalbak,aantalhoorn,smaken,toppings,typeklant,prijs_liter,perbol_pr,perliter_pr):
     list =['a','c','v']
     print('----------papi gelato----------')
 
@@ -68,9 +65,9 @@ def bon(bolletjes_pr,hoorntje_prijs,bakje_pr,aantalbak,aantalhoorn,smaken,toppin
         if smaak in smaken:
             aantal = smaken.count(smaak)
             if typeklant == '1':
-                print(f"b.{smaak} : {aantal} x $1.10 = ${round(1.10 * aantal,2):.2f}")
+                print(f"b.{smaak} : {aantal} x ${perbol_pr} = ${round(perbol_pr * aantal,2):.2f}")
             elif typeklant == '2':
-                print(f"l.{smaak} : {aantal} x $9.80 = ${round(9.80 * aantal,2):.2f}")
+                print(f"l.{smaak} : {aantal} x ${perliter_pr} = ${round(perliter_pr * aantal,2):.2f}")
     totaalprijs = (bolletjes_pr + hoorntje_prijs + bakje_pr + toppings + prijs_liter)
     if typeklant == '1':
         if bakje_pr > 0:
@@ -81,7 +78,6 @@ def bon(bolletjes_pr,hoorntje_prijs,bakje_pr,aantalbak,aantalhoorn,smaken,toppin
             print(f'Topping :   $ {toppings:.2f}')
         print(f"totaal : ${(totaalprijs):.2f}")
     elif typeklant == '2':
-
         print(f"totaal : ${(totaalprijs + (totaalprijs / 100 * 6)):.2f}")
         print(f"btw (6%): ${(totaalprijs / 100 * 6):.2f}")
 
@@ -96,7 +92,6 @@ def toppings(hoorn_bak,aantalbollen):
         topping = input("Wat voor topping wilt u: A. Geen, B. Slagroom, C. Sprinkels of D. Caramel Saus? ")
         if topping == 'a':
             break
-
         if topping == 'b':
             prijs += 0.50
             break
@@ -140,6 +135,13 @@ def liter_smaak(aantalliter):
             continue
         lijst_smaken.append(smaak)
         nummer += 1
-
     return lijst_smaken
 
+def vraag_typeklant():
+    typeklant = ''
+    while typeklant not in ('1','2'):
+        typeklant = input('Bent u 1. een particuliere klant of 2. een zakelijke klant? ')
+        if typeklant not in ('1','2'):
+            print(SNAPIKNIET)
+            continue
+    return typeklant
